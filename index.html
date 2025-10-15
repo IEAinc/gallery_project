@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PUB INDEX</title>
+
+    <link href="markup/images/favicon.ico" rel="shortcut icon">
+
+    <script type="text/javascript" src="markup/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="markup/js/ui.js"></script>
+
+    <link rel="stylesheet" href="markup/css/publish_list.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="projectTit">
+            2025-07 서울갤러리
+            <small>POWERED BY <em>innodis</em></small>
+            <div class="counter">
+                <span class="total"></span>page 중 <span class="fin"></span>page 작업완료 
+                <div class="percent_div">프로젝트 퍼블리싱 진행률: <span class="percent"></span>% </div>
+            </div>
+            <button type="button" class="openDevLog is-active">DevLog</button>
+        </h1>
+
+        <div class="container is-active">
+            <div class="left">
+                <h2>DevLog</h2>
+                <ul class="logList">
+                    <li class="date">2023-03-29</li>
+                    <li><strong>메인</strong><em>업로드</em></li>
+                </ul>
+            </div>
+            <div class="right">
+                <h2 class="title">사용자 페이지 - tr 클래스 값으로 상태제어 (아무값이 없으면 진행중 , fin : 완료 , del : 삭제 )</h2>
+                <table>
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:8%">
+                        <col style="width:12%">
+                        <col style="width:10%">
+                        <col style="width:60px">
+                        <col style="width:60px">
+                        <col style="width:60px">
+                        <col style="width:80px">
+                        <!-- <col style="width:*"> -->
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>MENU</th>
+                            <th>URL</th>
+                            <th>VIEW</th>
+                            <th>페이지타입</th>
+                            <th>디자인(PC)</th>
+                            <th>디자인(MO)</th>
+                            <th>완료여부</th>
+                            <th>작업자</th>
+                            <th>COMMENT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="">
+                            <td>가이드페이지</td>
+                            <td><p class="target"><span class='link'>guide.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="guide.html" target="_blank">PC</a>
+                                <a class="btnMo" href="guide.html">MO</a>
+                            </td>
+                            <td class="t_center">가이드</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">진행중</td>
+                            <td class="t_center">작업자1<br>작업자2</td>
+                            <td>
+                                <ul class="comment">
+                                    <li>공통소스 수시로 업데이트 예정</li>
+                                    <li style="color:red">서브페이지 검색 영역 디자인 변경 적용</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="fin">
+                            <td>메인</td>
+                            <td><p class="target"><span class='link'>main.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="main.html" target="_blank">PC</a>
+                                <a class="btnMo" href="main.html">MO</a>
+                            </td>
+                            <td class="t_center">메인</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">완료</td>
+                            <td class="t_center">작업자1</td>
+                            <td>
+                                <ul class="comment">
+                                    <li><strong>[03-29]</strong>업로드</li>
+                                    <li><strong>[04-04]</strong>웹접근성 이슈 추가수정</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="fin">
+                            <td>안내 > 박물관 소개 > 박물관 소개</td>
+                            <td><p class="target"><span class='link'>sub01_01.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="sub01_01.html" target="_blank">PC</a>
+                                <a class="btnMo" href="sub01_01.html">MO</a>
+                            </td>
+                            <td class="t_center">콘텐츠</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">X</td>
+                            <td class="t_center">완료</td>
+                            <td class="t_center">작업자1</td>
+                            <td>
+                                <ul class="comment">
+                                    <li><strong>[04-04]</strong>인덱스 업로드</li>
+                                    <li><strong>[04-04]</strong>PC 완료</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>안내 > 박물관 소개 > 이용안내</td>
+                            <td><p class="target"><span class='link'>sub01_01_02.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="sub01_01_02.html" target="_blank">PC</a>
+                                <a class="btnMo" href="sub01_01_02.html">MO</a>
+                            </td>
+                            <td class="t_center">콘텐츠</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">X</td>
+                            <td class="t_center">-</td>
+                            <td class="t_center">작업자2</td>
+                            <td>
+                                <ul class="comment">
+                                    <li><strong>[04-04]</strong>인덱스 업로드</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr class="">
+                            <td>소장자료 > 소장도서</td>
+                            <td><p class="target"><span class='link'>sub03_06.html</span></p></td>
+                            <td class="btn">
+                                <a class="btnPc" href="sub03_06.html" target="_blank">PC</a>
+                                <a class="btnMo" href="sub03_06.html">MO</a>
+                            </td>
+                            <td class="t_center">팝업</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">O</td>
+                            <td class="t_center">-</td>
+                            <td class="t_center">작업자2</td>
+                            <td>
+                                <ul class="comment">
+                                    <li><strong>[04-03]</strong>인덱스 업로드</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        
+                        <!-- 완료 mod -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
