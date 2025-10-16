@@ -19,7 +19,7 @@ $(document).ready(function() {
 
         var $thisBtnPc = $this.parent().next().children('.btnPc')
         var $thisBtnMo = $this.parent().next().children('.btnMo')
-        var $pcUrl = 'pb/' + url
+        var $pcUrl = 'views/user/' + url
         var $moUrl = 'javascript:PopWin("' + $pcUrl +'","400","740","no");'
 
         $thisBtnPc.on('click', function() {
