@@ -1,33 +1,757 @@
 <!doctype html>
 <html lang=ko>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- css -->
-    <link rel="stylesheet" href="../../resources/css/main.css">
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
 
-    <!-- lib -->
-    <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
 
-    <!-- js -->
-    <script src="../../resources/js/main.js"></script>
+  <!-- Air Datepicker JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.2.1/air-datepicker.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.2.1/air-datepicker.js"></script>
 
-    <title>메인 페이지</title>
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>메인 페이지</title>
 </head>
 <body data-text-size="normal">
 <!-- [웹 접근성] : 본문 바로가기 -->
 <a href="#main" id="skip-nav">본문 바로가기</a>
 <!-- 헤더 -->
+<div class="top-wrap pc-tablet-flex-only">
+  <div class="inner-wrap">
+    <div class="right">
+      <h2><img src="../../resources/images/logo/seoul_logo.svg" alt="서울특별시"/></h2>
+      <div class="notice-wrap">
+        <p class="ico-text speaker">2025년 서울시 시민참여예산위원회 위원 공개모집</p>
+      </div>
+    </div>
+    <div class="left">
+      <ul>
+        <li><a href="#">서울소식</a></li>
+        <li><a href="#">응답소</a></li>
+        <li><a href="#">정보공개</a></li>
+        <li><a href="#">분야별정보</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <header>
+    <!-- [사이드바] dim 처리 영역 -->
+    <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+    <div class="inner-wrap">
+        <!-- 로고 -->
+        <h1>
+            <a href="#">
+                <img src="../../resources/images/logo/logo_pc.svg" alt="logo">
+            </a>
+        </h1>
+        <!-- gnb -->
+        <nav>
+            <!-- pc -->
+            <ul class="pc-nav pc-only">
+                <li>
+                    <button type="button">서울 갤러리</button>
+                    <ul>
+                        <li><a href="#">갤러리 소개</a></li>
+                        <li><a href="#">시설 안내</a></li>
+                        <li><a href="#">공간 안내</a></li>
+                        <li><a href="#">찾아오시는 길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button">미래서울도서관</button>
+                    <ul>
+                        <li><a href="#">미래서울관</a></li>
+                        <li><a href="#">서울도서관</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button type="button">공간대관</button>
+                    <ul>
+                        <li><a href="#">대관안내</a></li>
+                    </ul>
+                </li>
+                <li class="long">
+                    <button type="button">프로그램</button>
+                    <ul>
+                        <li><a href="#">서울갤러리 일정</a></li>
+                        <li><a href="#">프로그램 안내</a></li>
+                    </ul>
+                </li>
+                <li class="long">
+                    <button type="button">알림마당</button>
+                    <ul>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">언론보도</a></li>
+                        <li><a href="#">미디어 갤러리</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <!-- mobile -->
+            <div class="sidebar tablet-mo-only">
+                <div class="sidebar-top">
+                    <!-- 언어 설정 -->
+                    <div class="tab-wrap">
+                        <button type="button" class="active">KR</button>
+                        <button type="button">EN</button>
+                    </div>
+                    <!-- 닫기 버튼 -->
+                    <button type="button" class="ico-btn circle bg-black ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+                </div>
+                <ul class="accordion-nav-list">
+                    <li class="active">
+                        <button type="button" class="active">서울 갤러리</button>
+                        <ul>
+                            <li class="active"><a href="#">갤러리 소개</a></li>
+                            <li><a href="#">시설 안내</a></li>
+                            <li><a href="#">공간 안내</a></li>
+                            <li><a href="#">찾아오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button">미래서울도서관</button>
+                        <ul>
+                            <li><a href="#">미래서울관</a></li>
+                            <li><a href="#">서울도서관</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <button type="button">공간대관</button>
+                        <ul>
+                            <li><a href="#">대관안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="long">
+                        <button type="button">프로그램</button>
+                        <ul>
+                            <li><a href="#">서울갤러리 일정</a></li>
+                            <li><a href="#">프로그램 안내</a></li>
+                        </ul>
+                    </li>
+                    <li class="long">
+                        <button type="button">알림마당</button>
+                        <ul>
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">언론보도</a></li>
+                            <li><a href="#">미디어 갤러리</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="custom-select pc-flex-only" data-select="small-round" data-options="1">
+            <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+                <span class="selected-text"></span>
+            </button>
+            <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+        </div>
+
+        <!-- hamburger (mobile) -->
+        <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+    </div>
 </header>
 
 <!-- 메인 -->
 <main id="main">
-sdfdsf
+  <!-- 메인 배너 -->
+  <section class="sec sec1-content-swiper swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide main-bg img1">
+        <div class="text-desc">
+          <p>Seoul Gallery</p>
+          <span>시민과 함께, 세계와 소통하는 서울의 대표 문화공간</span>
+        </div>
+      </div>
+      <div class="swiper-slide main-bg img2">
+        <div class="text-desc">
+          <p>Seoul Gallery</p>
+          <span>시민과 함께, 세계와 소통하는 서울의 대표 문화공간</span>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <div class="contents-overwrap-box">
+    <div class="sec-right">
+      <!-- 1-1. 달력 -->
+      <section class="gap-rgl calendar-box">
+        <div class="inner-wrap">
+          <div class="title-wrap">
+            <h3>서울 갤러리 일정</h3>
+            <a href="#" class="ico-text sm-ver calendar">달력보기</a>
+          </div>
+          <div>
+            <!-- 달력 표시할 div -->
+            <div id="datepicker"></div>
+          </div>
+        </div>
+      </section>
+      <!-- 1-2.현재 진행중인 일정 -->
+      <section class="gap-sm">
+        <div class="inner-wrap">
+          <div class="title-wrap">
+            <div class="tit">
+              <h3>서울 갤러리 일정</h3>
+              <span>5</span>
+            </div>
+          </div>
+          <div class="scroll-wrap">
+            <ul class="calendar-list">
+              <li>
+                <div class="calendar-card">
+                  <span>10</span>
+                  <div class="calendar-desc">
+                    <p class="ellipsis">서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관</p>
+                    <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="calendar-card">
+                  <span>11</span>
+                  <div class="calendar-desc">
+                    <p class="ellipsis">현대 미술의 새로운 경계</p>
+                    <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="calendar-card">
+                  <span>15</span>
+                  <div class="calendar-desc">
+                    <p class="ellipsis">예술과 기술의 융합</p>
+                    <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="calendar-card">
+                  <span>24</span>
+                  <div class="calendar-desc">
+                    <p class="ellipsis">어린이 미술 체험</p>
+                    <span class="ico-text xs-ver clock-gray">2025.12.24</span>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="calendar-card">
+                  <span>31</span>
+                  <div class="calendar-desc">
+                    <p class="ellipsis">연말 전시회</p>
+                    <span class="ico-text xs-ver clock-gray">2025.12.31 - 2025.12.31</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- 2. 컨텐츠 -->
+    <div class="sec-left">
+      <!-- 2-1. 관람시간/관람료 -->
+      <section class="sec sec-left1">
+        <div class="inner-wrap between">
+          <ul class="schedule-list">
+            <li>
+              <p class="ico-text clock">관람시간</p>
+              <div class="txt-desc">
+                <span>평일 10:00 - 18:00</span>
+                <small>*주말 및 공휴일 휴관</small>
+              </div>
+            </li>
+            <li>
+              <p class="ico-text ticket">관람료</p>
+              <div class="txt-desc">
+                <span>무료</span>
+              </div>
+            </li>
+          </ul>
+          <div class="line-box">
+            <p class="ico-text top-ver dot">오시는 길</p>
+          </div>
+        </div>
+      </section>
+      <!-- 2-2. 미래서울도서관 -->
+      <section class="sec sec-left2">
+        <div class="title-block">
+          <h3>미래서울도시관</h3>
+          <span>Future Seoul Urban Hall</span>
+        </div>
+        <div class="inner-wrap">
+          <!-- 미래서울도서관 이미지 설명 영역 -->
+          <div class="sec-left2-content">
+            <!-- 미래 서울관 -->
+            <div class="img-box">
+              <!-- 메인 이미지 스와이퍼 -->
+              <div class="swiper main-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">미래관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+                  </div>
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">서울관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
+                  </div>
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">미래서울관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
+                  </div>
+                </div>
+                <!-- 기존 페이지네이션 -->
+                <ul class="swiper-pagination pagination-box">
+                  <li><button type="button" class="color-badge active">미래관</button></li>
+                  <li><button type="button" class="color-badge">서울관</button></li>
+                  <li><button type="button" class="color-badge">미래서울관</button></li>
+                </ul>
+              </div>
+
+              <!-- 서브 이미지 스와이퍼 -->
+              <div class="swiper sub-swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="미래관"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="서울관"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="미래서울관"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 세계 도서관 -->
+            <div class="img-box">
+              <!-- 서브 이미지 스와이퍼 -->
+              <div class="swiper sub-swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="미래관"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="서울관"/>
+                  </div>
+                  <div class="swiper-slide">
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul_sub.png" alt="미래서울관"/>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 메인 이미지 스와이퍼 -->
+              <div class="swiper main-swiper2">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">도시관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+                  </div>
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">세계관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
+                  </div>
+                  <div class="swiper-slide img-main">
+                    <p class="text-link">세계도시관</p>
+                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
+                  </div>
+                </div>
+                <!-- 기존 페이지네이션 -->
+                <ul class="swiper-pagination pagination-box">
+                  <li><button type="button" class="color-badge green">도서관</button></li>
+                  <li><button type="button" class="color-badge green">세계관</button></li>
+                  <li><button type="button" class="color-badge green active">세계도시관</button></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 흐르는 텍스트 -->
+        <div class="marquee-container pc-tablet-flex-only">
+          <div class="marquee-wrapper">
+            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+          </div>
+        </div>
+      </section>
+      <!-- 2-3. 프로그램 -->
+      <section class="sec sec-left3">
+        <div class="inner-wrap">
+          <div class="sec-left3-content">
+            <div class="title-block">
+              <h3>프로그램</h3>
+              <span>Program</span>
+            </div>
+            <div class="sec-left3-right">
+              <div>
+                <div class="top-badge-list">
+                  <span class="color-badge active sm-ver">진행중</span>
+                  <span class="color-badge line-light sm-ver">2025.12-12 - 2025.12.31</span>
+                </div>
+                <div class="desc-box">
+                  <p class="tit">미래서울도시전</p>
+                  <p class="desc">
+                    미래서울도시전은 혁신적인 도시 디자인을 탐구하는 전시입니다.<br/>
+                    다양한 프로그램과 워크숍이 준비되어 있으니 놓치지 마세요!<br/>
+                    전시 관람은 사전 예약제로 운영되며, 주말에는 혼잡할 수 있습니다.<br/>
+                    자세한 일정은 공식 웹사이트에서 확인하세요!
+                  </p>
+                  <a href="#" class="btn bg-black link">자세히보기</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper main2-swiper">
+              <div class="img-box swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="../../resources/images/main-page/main-section2-3-1.png" alt=""/>
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../resources/images/main-page/main-section2-3-2.png" alt=""/>
+                </div>
+                <div class="swiper-slide">
+                  <img src="../../resources/images/main-page/main-section2-3-2.png" alt=""/>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+      <!-- 2-4. 대관안내 -->
+      <section class="sec sec-left4">
+        <div class="inner-wrap">
+          <div class="title-wrap">
+            <div class="title-block">
+              <h3>대관안내</h3>
+              <span>Venue Rental Information</span>
+            </div>
+            <a href="#" class="btn bg-transparent link">자세히보기</a>
+          </div>
+          <!-- 대관안내 스와이퍼 -->
+          <div class="sec-left4-content">
+            <div class="sec-left4-swiper swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <img src="../../resources/images/main-page/main-section4-1.png" alt="공연장" class="pc-tablet-only"/>
+                    <img src="../../resources/images/main-page/main-section4-1-mo.png" alt="공연장" class="mo-only"/>
+                    <div class="desc-box">
+                      <p>공연장</p>
+                      <span class=" pc-tablet-flex-only">
+                        서울 갤러리는 다양한 장르의 공연과 예술 이벤트가 열리는 공간입니다.<br/>
+                        관람객들은 특별한 경험을 통해 문화와 예술을 가까이에서 느낄 수 있습니다.
+                      </span>
+                      <a href="#" class="ico-text link right-ver bg-white rounded">공연장 대관예약</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <img src="../../resources/images/main-page/main-section4-1.png" alt="공연장" class="pc-tablet-only"/>
+                    <img src="../../resources/images/main-page/main-section4-1-mo.png" alt="공연장" class="mo-only"/>
+                    <div class="desc-box">
+                      <p>공연장</p>
+                      <span class=" pc-tablet-flex-only">
+                        서울 갤러리는 다양한 장르의 공연과 예술 이벤트가 열리는 공간입니다.<br/>
+                        관람객들은 특별한 경험을 통해 문화와 예술을 가까이에서 느낄 수 있습니다.
+                      </span>
+                      <a href="#" class="ico-text link right-ver bg-white rounded">공연장 대관예약</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <img src="../../resources/images/main-page/main-section4-1.png" alt="공연장" class="pc-tablet-only"/>
+                    <img src="../../resources/images/main-page/main-section4-1-mo.png" alt="공연장" class="mo-only"/>
+                    <div class="desc-box">
+                      <p>공연장</p>
+                      <span class=" pc-tablet-flex-only">
+                        서울 갤러리는 다양한 장르의 공연과 예술 이벤트가 열리는 공간입니다.<br/>
+                        관람객들은 특별한 경험을 통해 문화와 예술을 가까이에서 느낄 수 있습니다.
+                      </span>
+                      <a href="#" class="ico-text link right-ver bg-white rounded">공연장 대관예약</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="img-box">
+                    <img src="../../resources/images/main-page/main-section4-1.png" alt="공연장" class="pc-tablet-only"/>
+                    <img src="../../resources/images/main-page/main-section4-1-mo.png" alt="공연장" class="mo-only"/>
+                    <div class="desc-box">
+                      <p>공연장</p>
+                      <span class="pc-tablet-flex-only">
+                        서울 갤러리는 다양한 장르의 공연과 예술 이벤트가 열리는 공간입니다.<br/>
+                        관람객들은 특별한 경험을 통해 문화와 예술을 가까이에서 느낄 수 있습니다.
+                      </span>
+                      <a href="#" class="ico-text link right-ver bg-white rounded">공연장 대관예약</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul class="pagination-box">
+                <li><button type="button" class="color-badge green active">공연장</button></li>
+                <li><button type="button" class="color-badge line">워크숍룸</button></li>
+                <li><button type="button" class="color-badge line">동그라미방</button></li>
+                <li><button type="button" class="color-badge line">회의실</button></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+      <!-- 2-5. 공지사항 -->
+      <section class="sec sec-left5">
+        <div class="inner-wrap">
+          <div class="title-wrap">
+            <div class="title-block">
+              <h3>공지사항</h3>
+              <span>Notice</span>
+            </div>
+            <a href="#" class="btn bg-transparent link">자세히보기</a>
+          </div>
+          <!-- 공지사항 리스트 -->
+          <div class="sec-left5-content">
+            <ul class="notice-list">
+              <li>
+                <div class="notice-card">
+                  <div class="notice-top">
+                    <span class="line-badge gray sm-ver c-green">공지사항</span>
+                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                  </div>
+                  <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
+                </div>
+              </li>
+              <li>
+                <div class="notice-card">
+                  <div class="notice-top">
+                    <span class="line-badge gray sm-ver c-green">공지사항</span>
+                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                  </div>
+                  <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
+                </div>
+              </li>
+              <li>
+                <div class="notice-card">
+                  <div class="notice-top">
+                    <span class="line-badge gray sm-ver c-green">공지사항</span>
+                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                  </div>
+                  <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </main>
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-right">
+      <h2>
+        <img src="../../resources/images/logo/footer_logo.svg" alt="서울갤러리 로고" class="pc-only"/>
+        <img src="../../resources/images/logo/footer_logo.svg" alt="서울갤러리 로고" class="mo-only"/>
+      </h2>
+      <div class="footer-info">
+        <ul>
+          <li><a href="#" class="line-badge sm-ver c-white">개인정보처리방침</a></li>
+          <li><a href="#" class="line-badge sm-ver c-white">이용약관</a></li>
+        </ul>
+        <h2 class="tablet-only"><img src="../../resources/images/logo/footer_logo_tablet.svg" alt="서울갤러리 로고" class="tablet-only"/></h2>
+        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br class="tablet-inline-only"/>© 2025 SEOUL GALLERY. All Rights Reserved</p>
+        <a href="#" class="btn bg-black-transparent sm-ver insert-ico">서울갤러리 문의하기<span class="arrow-right ico"></span></a>
+      </div>
+    </div>
+    <div class="footer-left">
+      <div class="news-letter-box">
+        <span class="tit">NEWSlETTER</span>
+        <span class="desc">서울갤러리의 소식과 이야기를 뉴스레터를 받아보세요</span>
+        <div class="news-letter-input-wrap">
+          <input type="text" placeholder="E-MAIL"/>
+          <button type="button" class="ico-btn bg-black link circle"><span class="visually-hidden">이메일 전송하기</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 <script>
+// 헤더에 사용한 변수
+// 셀렉트 박스 변수 관리
+const selectOptions1 = [
+    { value: '한국어',  tag: 'button' },/*discount: '-50%', */
+    // { value: '옵션2', discount: '-50%', tag: 'a', href: 'https://example.com/link1' },
+    { value: '일본어',  tag: 'button' }
+];
+
+
+// custom-select 요소를 개별적으로 호출
+initializeCustomSelect(document.querySelector('.custom-select[data-options="1"]'), selectOptions1, {
+    initialValue:selectOptions1[0].value
+})
+
+// 스케줄 캘린더
+// DOM 준비 후 실행
+document.addEventListener('DOMContentLoaded', function () {
+  new AirDatepicker('#datepicker', {
+    inline: true,        // 열린 상태로 표시
+    dateFormat: 'yyyy-MM-dd', // 날짜 포맷
+    locale: {
+      days: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+      daysShort: ['일','월','화','수','목','금','토'],
+      daysMin: ['일','월','화','수','목','금','토'],
+      months: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      monthsShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+      today: '오늘',
+      clear: '지우기',
+      dateFormat: 'yyyy-MM-dd',
+      firstDay: 0
+    },
+    // 날짜 선택 이벤트
+    onSelect: function({date, formattedDate, datepicker}) {
+      console.log('선택한 날짜:', formattedDate);
+    }
+  });
+});
+
+/* Swiper 모음 */
+/* Swiper 초기화 */
+// 독립적인 스와이퍼 먼저 초기화
+const mainBanner = initFadeSwiper('.sec1-content-swiper', '', {
+  allowTouchMove: true // 메인배너는 터치 가능하도록 설정
+});
+
+// 미래서울관 스와이퍼
+const subSwiper = initFadeSwiper('.sub-swiper', '', {
+  allowTouchMove: false // 서브는 터치 불가능
+});
+const mainSwiper = initFadeSwiper('.main-swiper', '.main-swiper .pagination-box', {
+  linkedSwiper: subSwiper,
+  allowTouchMove: true // 메인은 터치 가능
+});
+
+// 세계 도서관 스와이퍼
+const subSwiper2 = initFadeSwiper('.sub-swiper2', '', {
+  allowTouchMove: false // 서브는 터치 불가능
+});
+const mainSwiper2 = initFadeSwiper('.main-swiper2', '.main-swiper2 .pagination-box', {
+  linkedSwiper: subSwiper2,
+  initialSlide: 2,
+  allowTouchMove: true // 메인은 터치 가능
+});
+
+// 대관 예약 스와이퍼
+const sec4Swiper = initFadeSwiper('.sec-left4-swiper', '.sec-left4-swiper .pagination-box', {
+  initialSlide: 2,
+  allowTouchMove: true, // 터치 가능
+  on: {
+    init: function() {
+      // 초기 상태 설정
+      const buttons = document.querySelectorAll('.sec-left4-swiper .pagination-box .color-badge');
+      buttons.forEach((btn, i) => {
+        if (i === 2) { // initialSlide가 2이므로
+          btn.classList.add('green', 'active');
+          btn.classList.remove('line');
+        } else {
+          btn.classList.add('line');
+          btn.classList.remove('green', 'active');
+        }
+      });
+    }
+  }
+});
+
+// 프로그램
+const main2Swiper = new Swiper('.main2-swiper', {
+  slidesPerView: "auto",
+  spaceBetween: 38,
+  loop: false,
+  initialSlide: 0,
+  threshold: 5,
+  watchSlidesProgress: true,
+  centeredSlides: false,
+  centerInsufficientSlides: true,
+  navigation: {
+    nextEl: ".main2-swiper .swiper-button-next",
+    prevEl: ".main2-swiper .swiper-button-prev",
+  },
+  breakpoints: {
+    0: {          // 화면 0px 이상 ~ 650px 이하
+      slidesPerView: 1.5,
+      spaceBetween: 20 // 화면 작아지면 간격도 줄일 수 있음
+    },
+    651: {        // 화면 651px 이상
+      slidesPerView: "auto",
+      spaceBetween: 38
+    },
+    1025: {        // 화면 651px 이상
+      slidesPerView: "auto",
+      spaceBetween: 28
+    }
+  },
+  on: {
+    slideChange() {
+      this.slides.forEach(slide => slide.classList.remove('swiper-slide-active'));
+      const activeIndex = this.activeIndex;
+      if (this.slides[activeIndex]) {
+        this.slides[activeIndex].classList.add('swiper-slide-active');
+      }
+    },
+    progress() {
+      const progress = this.progress;
+      const lastSlide = this.slides[this.slides.length - 1];
+
+      if (progress >= 0.99) {
+        this.slides.forEach(slide => slide.classList.remove('swiper-slide-active'));
+        lastSlide.classList.add('swiper-slide-active');
+      }
+    },
+    touchEnd() {
+      if (this.isEnd) {
+        this.slides.forEach(slide => slide.classList.remove('swiper-slide-active'));
+        this.slides[this.slides.length - 1].classList.add('swiper-slide-active');
+      }
+    },
+  },
+});
+
+
+/* 사이드바 탭 */
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.tab-wrap button');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1️⃣ 모든 버튼에서 active 제거
+      buttons.forEach(b => b.classList.remove('active'));
+
+      // 2️⃣ 클릭한 버튼에 active 추가
+      btn.classList.add('active');
+
+      // 3️⃣ 필요하면 여기서 언어 전환 등의 기능 실행
+      const lang = btn.textContent.trim();
+      console.log(`현재 선택된 언어: ${lang}`);
+    });
+  });
+});
 </script>
 </body>
 </html>

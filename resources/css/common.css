@@ -1,0 +1,215 @@
+/* 공통으로 사용하는 컴포넌트 */
+/* 공통 */
+.line-box {display:inline-block;border:1px solid var(--color-black2);border-radius:20px;padding:21px 32px;}
+.title-wrap {display:flex;align-items:center;justify-content:space-between;}
+.title-wrap.type2 {padding:31px 80px;justify-content:flex-start;gap:24px;}
+.title-wrap > h3 {font-size:36px;color:var(--color-black);font-weight:var(--fw-bold);}
+.tit {display:flex;align-items:center;justify-content:flex-start;}
+.tit > h3 {font-size:22px;}
+.tit > h3 + span {font-size:22px;font-weight:var(--fw-regular);color:var(--color-red);}
+.title-block {display:flex;align-items:center;gap:24px;}
+.title-block > h3 {font-size:32px;font-weight:var(--fw-bold);color:var(--color-black2);}
+.title-block > h3 + span {font-size:28px;font-weight:var(--fw-medium);color:var(--color-lightgray);letter-spacing:-1px;}
+
+@media (max-width: 1024px) {
+  .line-box {padding:15px 18px;}
+  .title-wrap > h3 {font-size:24px;}
+  .tit > h3 {font-size:15px;font-weight:var(--fw-bold);}
+  .tit > h3 + span {font-size:15px;font-weight:var(--fw-bold);}
+  .title-block {gap:14px;}
+  .title-block > h3 {font-size:22px;}
+  .title-block > h3 + span {font-size:20px;}
+}
+@media (max-width: 650px) {
+  .line-box {padding:12px;border-radius:12px;}
+  .tit > h3 + span {margin-left:2px;}
+  .title-block {gap:2px;}
+  .title-block > h3 {font-size:20px;}
+  .title-block > h3 + span {font-size:14px;}
+}
+
+/* 2. 아이콘 텍스트 */
+/* 2-1. 아이콘 텍스트 (기본 사이즈가 24px, 색상 #111---color-black2) */
+.ico-text {display:inline-block;padding-left:36px;font-size:24px;color:var(--color-black2);background-repeat:no-repeat;background-size:24px;}
+.ico-text.clock {background-image:url("../images/icons/ico_clock.svg");}
+.ico-text.ticket {background-image:url("../images/icons/ico_ticket.svg");}
+.ico-text.dot {background-image:url("../images/icons/ico_dot.svg");}
+.ico-text.clock-gray{background-image:url("../images/icons/ico_clock_gray.svg")}
+.ico-text.calendar{background-image:url("../images/icons/ico_calendar.svg")}
+.ico-text.link {background-image:url("../images/icons/ico_arrow_right.svg");background-size:18px;}
+.ico-text.speaker {background-image:url("../images/icons/ico_speaker.png");padding-left:30px;}
+
+/* 2-2. 아이콘 텍스트(세로형) */
+.ico-text.top-ver{padding-left:0;padding-top:32px;}
+.ico-text.top-ver.dot {background-position: center top;}
+.ico-text.right-ver{padding-left:0;padding-right:37px;}
+.ico-text.right-ver.link {background-position: right 19px center;}
+.ico-text.rounded {border-radius:100px;background-color:var(--color-white);padding:16px 37px 16px 20px;font-size:20px;font-weight:var(--fw-regular);color:var(--color-black2);}
+.ico-text.bg-white {background-color:var(--color-white);}
+/* 2-3. 아이콘 텍스트(사이즈) */
+.ico-text.xs-ver{background-size:16px 16px;background-position:0 center;padding-left:20px;font-size:16px;color:var(--color-gray);}
+.ico-text.sm-ver{background-size:16px 16px;background-position:0 center;padding-left:20px;font-size:20px;color:var(--main-color);}
+
+
+@media (max-width: 1024px) {
+  /* 2-1. 아이콘 텍스트 (기본 사이즈가 24px, 색상 #111---color-black2) */
+  .ico-text {padding-left:26px;font-size:17px;background-size:18px;}
+  .ico-text.clock {min-height:18px;}
+  .ico-text.ticket {min-height:18px;}
+    /* 2-2. 아이콘 텍스트(세로형) */
+  .ico-text.top-ver{padding-left:0;padding-top:24px;}
+
+  /* 2-3. 아이콘 텍스트(사이즈) */
+  .ico-text.xs-ver{padding-left:18px;font-size:12px;}
+  .ico-text.sm-ver{padding-left:22px;font-size:16px;}
+}
+
+@media (max-width:650px) {
+  .ico-text {padding-left:24px;font-size:14px;background-size:14px;}
+  /* 2-2. 아이콘 텍스트(세로형) */
+  .ico-text.top-ver{padding-top:20px;font-size:14px;}
+  .ico-text.rounded {height:26px;padding:6px 29px 6px 12px;font-size:12px;}
+  /* 2-3. 아이콘 텍스트(사이즈) */
+  .ico-text.xs-ver{padding-left:18px;font-size:12px;}
+  .ico-text.sm-ver{background-size:12px;padding-left:18px;font-size:12px;}
+  .ico-text.right-ver{padding-right:29px;}
+  .ico-text.right-ver.link {background-position: right 11px center;}
+}
+
+/* 3. 아이콘만 버튼 */
+/* 아이콘 버튼 */
+.ico-btn {display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;position:relative;transition:border-color 0.3s;cursor:pointer;background-position:center center;background-repeat:no-repeat;}
+.ico-btn.circle {border-radius:50%;}
+.ico-btn.bg-black {background-color:var(--color-black2);}
+.ico-btn.ico-hamburger{width:24px;height:24px;background:url("../images/icons/ico_hamburger.svg") center top no-repeat;background-size:24px;}
+.ico-btn.ico-close {width:34px;height:34px;background-image:url("../images/icons/ico_close_white.svg");background-size:16px 16px;}
+.ico-btn.link {width:40px;height:40px;background-image:url("../images/icons/ico_arrow_right_white_lg.svg");background-size:24px 24px;}
+
+/* 셀렉트 박스(수정 필요) */
+/* 셀렉트박스 */
+.custom-select {width:200px;position:relative;font-family:inherit;overflow:hidden;}
+.custom-select.active {overflow:initial;}
+.select-toggle {width:100%;height:48px;padding: 10px;text-align: left;border: 1px solid var(--border-color);border-radius:4px;background:var(--color-white) url("../images/icons/ico_arrow_down.svg") right 12px center no-repeat;background-size:14px;cursor: pointer;transition:background 0.2s;}
+.select-toggle:disabled{background:#fff!important;}
+.select-toggle[aria-expanded="true"] {background:var(--color-white) url("../images/icons/ico_arrow_down_active.svg") right 12px center no-repeat;}
+.select-toggle:focus {border-width:2px solid var(--main-bg-color);outline:none;}
+.select-list {position: absolute;width: 100%;background: var(--color-white);border: 1px solid var(--border-color);border-top: none;max-height: 200px;overflow-y: auto;visibility:hidden;opacity:0;z-index: 10;top: -9999px;left: -9999px;}
+.select-list[aria-hidden="false"] {visibility: visible;opacity: 1;pointer-events: auto;  top: 48px;left: 0;}
+.select-list li {cursor: pointer;}
+.select-list li > a,
+.select-list li > button {padding: 10px;width:100%;}
+.select-list li:hover,
+.select-list li[aria-selected="true"] {background: var(--main-color);color: var(--color-white);}
+
+
+@media (max-width: 1024px) {
+  .select-toggle {height:40px;}
+  .select-list[aria-hidden="false"] {top:40px;}
+}
+
+/* 위로 열리기 */
+.custom-select.up .select-list[aria-hidden="false"] {top:auto;left: 0;bottom:40px;border: 1px solid var(--border-color);border-bottom: none;}
+/* footer안에서의 셀렉트박스 */
+.custom-select[data-select="footer"] {width:110px;}
+.custom-select[data-select="footer"]  .select-toggle {height: 37px;padding:8px 20px;}
+.custom-select[data-select="footer"] .select-toggle[aria-expanded="true"] {linear-gradient(to bottom, red 3 0%, rgba(51, 51, 51, 0) 100%) url("../images/ico/ico_select_arrow_active.svg") right 10px center no-repeat;}
+.custom-select[data-select="footer"] .select-toggle:focus {border-width:2px;border-color:blue;}
+.custom-select[data-select="footer"] .select-toggle {border-radius:0;border-width: 0 0 1px 0;}
+/* header안에서의 셀렉트 박스 */
+.custom-select[data-select="small-round"] {width:110px;}
+.custom-select[data-select="small-round"] .select-toggle {height: 37px;padding:8px 20px;border-radius:100px;}
+.custom-select[data-select="small-round"] .select-toggle[aria-expanded="true"] {linear-gradient(to bottom, red 3 0%, rgba(51, 51, 51, 0) 100%) url("../images/ico/ico_select_arrow_active.svg") right 10px center no-repeat;}
+.custom-select[data-select="small-round"] .select-toggle:focus {border-width:2px;border-color:blue;}
+
+/* 캘린더 */
+.schedule-calendar {}
+.toastui-calendar-day-name-container {height:100%;display:flex;}
+.toastui-calendar-day-name-container > .toastui-calendar-day-name-item{width:auto!important;background:blue;}
+.schedule-calendar .toastui-calendar-day-names.toastui-calendar-month {height:40px;padding:0;}
+.schedule-calendar .toastui-calendar-day-name-item.toastui-calendar-month {height: 100%;padding:0;display:flex;align-items:center;justify-content:center;align-items:center;}
+.schedule-calendar .toastui-calendar-day-name-item.toastui-calendar-month > span {}
+.schedule-calendar .toastui-calendar-template-monthDayName {font-size:14px;font-weight:var(--fw-bold);color:var(--color-black2);text-align:center;}
+
+/* 버튼 */
+.btn {display:inline-flex;align-items:center;justify-content:center;height:48px;padding:12px 18px;border-radius:100px;font-size:18px;font-weight:var(--fw-regular);}
+.btn.bg-black {background-color:var(--color-black2);color:var(--color-white);}
+.btn.bg-transparent {padding:0 42px 0 0;border-radius:0;background-color:transparent;color:var(--color-gray6);}
+.btn.bg-black-transparent {background-color:rgba(255,255,255,0.1);color:var(--color-white);}
+.btn.c-white {color:var(--color-white);border-color:var(--color-white);background-color:transparent;}
+.btn.link {padding-right:42px;background-image:url("../images/icons/ico_arrow_right_white_sm.svg");background-position:right 18px center;background-size:16px;background-repeat:no-repeat;}
+.btn.arrow-right{padding-right:36px;background-image:url("../images/icons/ico_side_arrow_white.svg");background-position:right 16px center;background-size:18px;background-repeat:no-repeat;}
+.btn.bg-transparent.link {background-image:url("../images/icons/ico_arrow_right_gray_sm.svg");}
+.btn.line {height:35px;border-color:var(--color-white);font-size:16px;border-radius:100px;}
+.btn.insert-ico > .ico{display:inline-block;width:18px;height:18px;margin-left:4px;background-position:center;background-size:18px;background-repeat:no-repeat}
+.btn.insert-ico > .ico.arrow-right {background-image:url("../images/icons/ico_side_arrow_white.svg");}
+.color-badge {display:flex;align-items:center;justify-content:center;height:48px;padding:12px 20px;border-radius:100px;background-color:var(--color-white);font-size:20px;color:var(--color-black2);font-weight:var(--fw-regular);}
+.color-badge.sm-ver {height:36px;padding:12px;font-size:16px;}
+.color-badge.green.active {background-color:var(--color-green);color:var(--color-white);}
+.color-badge.active {background-color:var(--color-yellow);}
+.color-badge.line {border:1px solid var(--color-black2);}
+.color-badge.line-light {border:1px solid var(--color-border);}
+.color-badge.line.active {border:0;}
+.line-badge {display:inline-flex;align-items:center;justify-content:center;border-radius:100px;padding:12px;font-size:16px;border:1px solid var(--color-border);color:var(--color-gray);}
+.line-badge.c-green {color:var(--color-green);}
+.line-badge.c-white {color:var(--color-white);border-color:var(--color-white);background-color:transparent;}
+.line-badge.sm-ver {height:34px;padding:4px 12px;border-radius:20px;font-size:16px;border-color:var(--color-border);}
+@media (max-width: 1024px) {
+  .btn {height:32px;padding:8px 12px;font-size:14px;}
+  .btn.link {padding-right:28px;background-size:11px;background-position:right 11px center;}
+  .color-badge {height:32px;padding:8px 16px;font-size:14px;}
+  .color-badge.sm-ver {height:25px;font-size:12px;padding:8px;}
+  .line-badge.sm-ver {height:23px;font-size:12px;padding:2px 8px;}
+}
+@media (max-width: 650px) {
+  .color-badge {padding:8px 12px;}
+}
+
+/* 텍스트 */
+.text-link {display:inline-block;font-size:32px;color:var(--color-black2);font-weight:var(--fw-bold);padding-right:40px;background:url("../images/icons/ico_arrow_right_up.svg") right 0 center no-repeat;background-size:40px;}
+.txt-sm {font-size:16px}
+.fw-regular {font-weight:var(--fw-regular);}
+.c-gray {color:var(--color-gray);}
+
+@media (max-width: 1024px) {
+  .text-link {font-size:22px;}
+}
+@media (max-width: 650px) {
+  .text-link {font-size:20px;padding-right:22px;background-size:22px;}
+}
+
+/* tab */
+.tab-wrap {display:inline-flex;align-items:center;padding:4px;border:1px solid var(--color-border);border-radius:100px;background-color:var(--color-white);}
+.tab-wrap > button {display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;font-size:12px;color:var(--color-gray);font-weight:var(--fw-medium);}
+.tab-wrap > button.active {background-color:var(--color-green);color:var(--color-white);}
+
+/* datepicker */
+.air-datepicker {background-color:transparent!important;}
+.air-datepicker * {box-sizing:border-box;font-family: "Paperlogy", sans-serif;}
+.air-datepicker.-inline-{width:100%;border:0;}
+.air-datepicker--navigation {}
+.air-datepicker-nav {align-items:center;height:60px;padding:0 20px!important;border:1px solid var(--color-border2);border-radius:20px;}
+.air-datepicker-nav--title {font-size:22px;font-weight:var(--fw-bold);color:var(--color-black2);}
+.air-datepicker-nav--title i {color:var(--color-black2)!important;}
+.air-datepicker--content {padding:0;margin-top:20px;}
+.air-datepicker-nav > *:last-child {transform:rotate(180deg);}
+.air-datepicker-nav--action {width:24px!important;height:24px!important;background-image:url("../images/icons/ico_calendar_arrow.svg");backgroud-repeat:no-repeat;background-position:center center;background-size:24px;}
+.air-datepicker-nav--action:hover {background-image:url("../images/icons/ico_calendar_arrow.svg")!important;}
+.air-datepicker-nav--action svg{display: none!important;}
+.air-datepicker-body--day-names {margin:0!important;}
+.air-datepicker-body--day-name {font-size:20px!important;font-weight:var(--fw-bold);height:45px;color:var(--color-black2)!important;}
+.air-datepicker-cell.-day-.-other-month-, .air-datepicker-cell.-year-.-other-decade- {color:var(--color-disabled)!important;}
+.air-datepicker-body--cells.-days- {grid-auto-rows: 52px!important;}
+.air-datepicker-body--cells.-days- {grid-auto-rows: 52px!important;}
+.air-datepicker-cell {font-size:20px!important;font-weight:var(--fw-medium);}
+.air-datepicker-cell.-current- {width:52px;height:52px;color:var(--color-black2)!important;font-weight:var(--fw-bold)!important;border:2px solid var(--color-black2);border-radius:50%;background-color:var(--color-white);}
+.air-datepicker-cell.-selected-{width:52px;height:52px;border-radius:50%;background:var(--main-color)!important;}
+.air-datepicker-cell.-selected-.-current-{color:var(--color-white)!important;}
+
+@media (max-width: 1024px) {
+  .air-datepicker-nav {height:52px;padding:0 12px!important;border-radius:12px;}
+  .air-datepicker-nav--title {font-size:15px;}
+  .air-datepicker--content {margin-top:12px;}
+  .air-datepicker-nav--action {width:18px!important;height:18px!important;background-size:18px;}
+  .air-datepicker-body--day-name {font-size:14px!important;}
+  .air-datepicker-cell {font-size:14px!important;}
+}
