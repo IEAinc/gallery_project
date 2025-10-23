@@ -13,6 +13,7 @@
   /* 색상 */
   --color-black: #000000;
   --color-black2:#111111;
+  --color-black3:#333333;
   --color-white: #ffffff;
   --color-disabled: #aaaaaa;
   --color-border:#dddddd;
@@ -23,11 +24,13 @@
   --color-gray4:#222222;
   --color-gray5:#D0D5DD;
   --color-gray6:#444444;
+  --color-gray7:#777676;
   --color-lightgray: #cccccc;
   --color-lightgray2:#98A2B3;
   --color-red: #D12A5F;
   --color-yellow:#FDB933;
   --color-green:#278352;
+  --color-purple:#5925DC;
   --color-lightgreen:#EEFAF3;
 
   /* 배경 */

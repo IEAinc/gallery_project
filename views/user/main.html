@@ -19,10 +19,11 @@
 
   <!-- js -->
   <script src="../../resources/js/main.js"></script>
+  <script src="../../resources/js/intro.js"></script>
 
   <title>메인 페이지</title>
 </head>
-<body data-text-size="normal">
+<body>
 <!-- [웹 접근성] : 본문 바로가기 -->
 <a href="#main" id="skip-nav">본문 바로가기</a>
 <!-- 헤더 -->
@@ -51,7 +52,8 @@
         <!-- 로고 -->
         <h1>
             <a href="#">
-                <img src="../../resources/images/logo/logo_pc.svg" alt="logo">
+                <img src="../../resources/images/logo/logo_pc.svg" class="first" alt="logo">
+                <img src="../../resources/images/logo/logo_pc_dark.svg" class="second" alt="logo">
             </a>
         </h1>
         <!-- gnb -->
@@ -288,6 +290,9 @@
         <div class="title-block">
           <h3>미래서울도시관</h3>
           <span>Future Seoul Urban Hall</span>
+          <div class="rotate-wrap">
+            <img src="../../resources/images/main-page/rotate.svg" alt="" class="rotate-symbol" />
+          </div>
         </div>
         <div class="inner-wrap">
           <!-- 미래서울도서관 이미지 설명 영역 -->
@@ -295,27 +300,27 @@
             <!-- 미래 서울관 -->
             <div class="img-box">
               <!-- 메인 이미지 스와이퍼 -->
-              <div class="swiper main-swiper">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">미래관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+              <div class="img-text-box">
+                <p class="text-link">미래서울관</p>
+                <div class="swiper main-swiper">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+                    </div>
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
+                    </div>
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
+                    </div>
                   </div>
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">서울관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
-                  </div>
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">미래서울관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
-                  </div>
+                  <!-- 기존 페이지네이션 -->
+                  <ul class="swiper-pagination pagination-box">
+                    <li><button type="button" class="color-badge active">미래체험공간</button></li>
+                    <li><button type="button" class="color-badge">정책소통공간</button></li>
+                    <li><button type="button" class="color-badge">시민동행공간</button></li>
+                  </ul>
                 </div>
-                <!-- 기존 페이지네이션 -->
-                <ul class="swiper-pagination pagination-box">
-                  <li><button type="button" class="color-badge active">미래관</button></li>
-                  <li><button type="button" class="color-badge">서울관</button></li>
-                  <li><button type="button" class="color-badge">미래서울관</button></li>
-                </ul>
               </div>
 
               <!-- 서브 이미지 스와이퍼 -->
@@ -334,7 +339,7 @@
               </div>
             </div>
 
-            <!-- 세계 도서관 -->
+            <!-- 세계 도시관 -->
             <div class="img-box">
               <!-- 서브 이미지 스와이퍼 -->
               <div class="swiper sub-swiper2">
@@ -352,42 +357,44 @@
               </div>
 
               <!-- 메인 이미지 스와이퍼 -->
-              <div class="swiper main-swiper2">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">도시관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+              <div class="img-text-box">
+                <p class="text-link">세계도시관</p>
+                <div class="swiper main-swiper2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래관"/>
+                    </div>
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
+                    </div>
+                    <div class="swiper-slide img-main">
+                      <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
+                    </div>
                   </div>
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">세계관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="서울관"/>
-                  </div>
-                  <div class="swiper-slide img-main">
-                    <p class="text-link">세계도시관</p>
-                    <img src="../../resources/images/main-page/main_section2_futureSeoul.png" alt="미래서울관"/>
-                  </div>
+                  <!-- 기존 페이지네이션 -->
+                  <ul class="swiper-pagination pagination-box">
+                    <li><button type="button" class="color-badge green active">글로벌매력공간</button></li>
+                    <li><button type="button" class="color-badge green ">도시외교공간</button></li>
+                  </ul>
                 </div>
-                <!-- 기존 페이지네이션 -->
-                <ul class="swiper-pagination pagination-box">
-                  <li><button type="button" class="color-badge green">도서관</button></li>
-                  <li><button type="button" class="color-badge green">세계관</button></li>
-                  <li><button type="button" class="color-badge green active">세계도시관</button></li>
-                </ul>
               </div>
             </div>
           </div>
-        </div>
-        <!-- 흐르는 텍스트 -->
-        <div class="marquee-container pc-tablet-flex-only">
-          <div class="marquee-wrapper">
-            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
-            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
-            <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+          <!-- 흐르는 텍스트 -->
+          <div class="no-scroll-box">
+            <div class="marquee-container pc-tablet-flex-only">
+              <div class="marquee-wrapper">
+                <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+                <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+                <img src="../../resources/images/main-page/flow-text.svg" class="marquee-text" alt="SEOUL GALLERY"/>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
       <!-- 2-3. 프로그램 -->
-      <section class="sec sec-left3">
+      <section class="sec sec-left3 no-transition">
         <div class="inner-wrap">
           <div class="sec-left3-content">
             <div class="title-block">
@@ -504,10 +511,10 @@
                 </div>
               </div>
               <ul class="pagination-box">
-                <li><button type="button" class="color-badge green active">공연장</button></li>
-                <li><button type="button" class="color-badge line">워크숍룸</button></li>
+                <li><button type="button" class="color-badge green active">워크숍룸</button></li>
                 <li><button type="button" class="color-badge line">동그라미방</button></li>
-                <li><button type="button" class="color-badge line">회의실</button></li>
+                <li><button type="button" class="color-badge line">회의실1</button></li>
+                <li><button type="button" class="color-badge line">회의실2</button></li>
               </ul>
             </div>
           </div>
@@ -532,7 +539,7 @@
                 <div class="notice-card">
                   <div class="notice-top">
                     <span class="line-badge gray sm-ver c-green">공지사항</span>
-                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                    <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
                 </div>
@@ -540,8 +547,8 @@
               <li>
                 <div class="notice-card">
                   <div class="notice-top">
-                    <span class="line-badge gray sm-ver c-green">공지사항</span>
-                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                    <span class="line-badge gray sm-ver c-green fw-bold">공지사항</span>
+                    <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
                 </div>
@@ -549,8 +556,8 @@
               <li>
                 <div class="notice-card">
                   <div class="notice-top">
-                    <span class="line-badge gray sm-ver c-green">공지사항</span>
-                    <span class="txt-sm c-gray fw-regular">2025.12.12</span>
+                    <span class="line-badge gray sm-ver">공지사항</span>
+                    <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
                 </div>
@@ -577,7 +584,7 @@
           <li><a href="#" class="line-badge sm-ver c-white">이용약관</a></li>
         </ul>
         <h2 class="tablet-only"><img src="../../resources/images/logo/footer_logo_tablet.svg" alt="서울갤러리 로고" class="tablet-only"/></h2>
-        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br class="tablet-inline-only"/>© 2025 SEOUL GALLERY. All Rights Reserved</p>
+        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br/>© 2025 SEOUL GALLERY. All Rights Reserved</p>
         <a href="#" class="btn bg-black-transparent sm-ver insert-ico">서울갤러리 문의하기<span class="arrow-right ico"></span></a>
       </div>
     </div>
@@ -599,7 +606,7 @@
 const selectOptions1 = [
     { value: '한국어',  tag: 'button' },/*discount: '-50%', */
     // { value: '옵션2', discount: '-50%', tag: 'a', href: 'https://example.com/link1' },
-    { value: '일본어',  tag: 'button' }
+    { value: '영어',  tag: 'button' }
 ];
 
 
@@ -624,6 +631,9 @@ document.addEventListener('DOMContentLoaded', function () {
       clear: '지우기',
       dateFormat: 'yyyy-MM-dd',
       firstDay: 0
+    },
+    navTitles: {
+      days: ' yyyy 년 MM 월 '
     },
     // 날짜 선택 이벤트
     onSelect: function({date, formattedDate, datepicker}) {

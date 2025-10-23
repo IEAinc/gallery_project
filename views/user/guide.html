@@ -14,8 +14,6 @@
   <script src="../../resources/lib/swiper/swiper.js"></script>
 
   <!-- tui calenadar -->
-  <!-- 변경 후 -->
-  <!-- head 태그 안에 있는 CDN 링크를 다음과 같이 변경하세요 -->
   <link rel="stylesheet" href="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.css" />
   <script src="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.js"></script>
 
@@ -306,7 +304,381 @@
 
     </div>
   </div>
-  <!-- -->
+  <!-- 테이블 -->
+  <div class="guide-wrap">
+    <div class="guide-title-wrap">
+      <h4>3. 테이블</h4>
+    </div>
+    <div class="guide-box">
+      <!-- List sort -->
+      <div class="list-sort">
+        <p class="total">Total<span class="c-purple">123</span></p>
+        <div class="search-wrap">
+          <div class="select-wrap">
+            <select>
+              <option>전체</option>
+            </select>
+          </div>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="검색어를 입력해주세요."/>
+          </div>
+          <button type="button" class="btn normal-rounded bg-black">검색</button>
+        </div>
+      </div>
+      <!-- 테이블 -->
+      <div class="custom-table">
+        <table class="pc-mo-only">
+          <caption class="visually-hidden">문의하기</caption>
+          <colgroup>
+            <col style="width:104px;"/>
+            <col style="width:auto;" />
+            <col style="width:140px;"/>
+            <col style="width:140px" />
+          </colgroup>
+          <!--
+          <thead>
+          <tr>
+
+          </tr>
+          </thead>
+          -->
+          <tbody>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap">10</div></td>
+            <td>
+              <div class="td-wrap">
+                <p class="ellipsis2 bold left">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">김미래</p></div></td>
+            <td><div class="td-wrap"><p class="right">2025.12.12</p></div></td>
+          </tr>
+          </tbody>
+        </table>
+        <table class="mo-pc-only">
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">10</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">9</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">8</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">7</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">6</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">5</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">4</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">3</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">2</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <span class="txt-xxs c-gray mb-4">1</span>
+                <p class="ellipsis2 txt-xs c-black left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">김미래</li>
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- 페이지네이션 -->
+      <div class="pagination-wrap">
+        <div class="pagination">
+          <button type="button" class="pg_first"><span class="visually-hidden">처음으로 가기</span></button>
+          <button type="button" class="pg_prev"><span class="visually-hidden">이전</span></button>
+          <ul>
+            <li><button type="button" class="active">1</button></li>
+            <li><button type="button">2</button></li>
+            <li><button type="button">3</button></li>
+            <li><button type="button">4</button></li>
+            <li><button type="button">5</button></li>
+            <li><button type="button">...</button></li>
+          </ul>
+          <button type="button" class="pg_next"><span class="visually-hidden">다음</span></button>
+          <button type="button" class="pg_last"><span class="visually-hidden">마지막으로 가기</span></button>
+        </div>
+        <div class="btn-wrap">
+          <a href="#" class="btn bg-green insert-ico"><span class="ico-pen ico"></span>문의하기</a>
+        </div>
+      </div>
+
+      <!-- 테이블 -->
+      <div class="notice-wrap end">
+        <span class="c-red notice-txt">* 표시는 필수 입력입니다.</span>
+      </div>
+      <div class="custom-ui-table">
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              닉네임
+            </div>
+            <div class="c-td-wrap">
+              <label class="input-wrap">
+                <input type="text" placeholder="텍스트를 입력해주세요"/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              비밀번호
+            </div>
+            <div class="c-td-wrap mo-col">
+              <label class="input-wrap">
+                <input type="text" placeholder="텍스트를 입력해주세요"/>
+              </label>
+              <span class="error-msg">비밀번호 분실 시 찾을 수 없으니 주의해 주세요.</span>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              제목
+            </div>
+            <div class="c-td-wrap">
+              <label class="input-wrap">
+                <input type="text" placeholder=""/>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important al-start">
+              문의내용
+            </div>
+            <div class="c-td-wrap">
+              <label class="textarea-wrap">
+                <textarea placeholder="텍스트를 입력해주세요"></textarea>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- -->
+      <div class="btn-wrap">
+        <a href="#" class="btn br-green">목록</a>
+        <a href="#" class="btn bg-green insert-ico"><span class="ico-register ico"></span>등록</a>
+      </div>
+    </div>
+  </div>
 </main>
 <script>
   // 셀렉트 박스 변수 관리

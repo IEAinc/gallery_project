@@ -37,6 +37,46 @@ function openSideBar() {
 function closeSideBar() {
   removeActiveClasses();
 }
+// -------- 사이드바 열고 닫기 관련 함수 모음 -----------
+// 포커스 트랩 함수
+function trapFocus(container) {
+  const focusableElements = Array.from(
+    container.querySelectorAll(
+      'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    )
+  ).filter(el => {
+    // 보이는 요소만 걸러냄 (display: none 등)
+    return el.offsetParent !== null;
+  });
+
+  if (focusableElements.length === 0) return;
+
+  const firstEl = focusableElements[0];
+  const lastEl = focusableElements[focusableElements.length - 1];
+
+  firstEl.focus();
+
+  function handleKeydown(e) {
+    if (e.key === 'Tab') {
+      if (e.shiftKey) {
+        if (document.activeElement === firstEl) {
+          e.preventDefault();
+          lastEl.focus();
+        }
+      } else {
+        if (document.activeElement === lastEl) {
+          e.preventDefault();
+          firstEl.focus();
+        }
+      }
+    } else if (e.key === 'Escape') {
+      closeSidebar();
+    }
+  }
+
+  document.addEventListener('keydown', handleKeydown);
+}
+
 // 상태 초기화 함수
 function removeActiveClasses() {
   /* 1. 사이드바 */
@@ -376,28 +416,44 @@ $(function() {
   });
 
   /* 사이드바 관련 accordion */
+  /* 사이드바 관련 accordion */
   const $accordion = $(".accordion-nav-list");
-  $accordion.on("click", "> li > button", function () {
+
+// 클릭 또는 포커스 시 열기
+  $accordion.on("click focusin", "> li > button", function () {
     const $btn = $(this);
     const $li = $btn.parent();
 
-    // 이미 활성화된 상태면 닫기
-    if ($li.hasClass("active")) {
+    // 이미 활성화된 상태면 클릭 시 닫기 (focusin일 때는 유지)
+    if ($li.hasClass("active") && event.type === "click") {
       $li.removeClass("active");
       $btn.removeClass("active");
       $btn.next("ul").slideUp(200);
       return;
     }
 
-    // 다른 모든 메뉴 닫기
-    $accordion.find("> li").removeClass("active").find("> button").removeClass("active");
-    $accordion.find("> li > ul").slideUp(200);
+    // 다른 메뉴 닫기 (단, 이번에 포커스된 li는 제외)
+    $accordion.find("> li").not($li).removeClass("active")
+      .find("> button").removeClass("active")
+      .next("ul").slideUp(200);
 
-    // 현재 클릭한 메뉴만 열기
+    // 현재 메뉴 열기
     $li.addClass("active");
     $btn.addClass("active");
-    $btn.next("ul").slideDown(200);
+    $btn.next("ul").stop(true, true).slideDown(200);
   });
+
+// 포커스가 아코디언 전체를 벗어났을 때 닫기
+  $accordion.on("focusout", function (e) {
+    const $related = $(e.relatedTarget);
+    if (!$related.closest(".accordion-nav-list").length) {
+      // 완전히 벗어나면 모두 닫기
+      $accordion.find("> li").removeClass("active")
+        .find("> button").removeClass("active")
+        .next("ul").slideUp(200);
+    }
+  });
+
 
   /* [공통]사이드바 */
   // 윈도우 리사이즈 이벤트
