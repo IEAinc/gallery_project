@@ -46,121 +46,121 @@
   </div>
 </div>
 <header>
-    <!-- [사이드바] dim 처리 영역 -->
-    <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
-    <div class="inner-wrap">
-        <!-- 로고 -->
-        <h1>
-            <a href="#">
-                <img src="../../resources/images/logo/logo_pc.svg" class="first" alt="logo">
-                <img src="../../resources/images/logo/logo_pc_dark.svg" class="second" alt="logo">
-            </a>
-        </h1>
-        <!-- gnb -->
-        <nav>
-            <!-- pc -->
-            <ul class="pc-nav pc-only">
-                <li>
-                    <button type="button">서울 갤러리</button>
-                    <ul>
-                        <li><a href="#">갤러리 소개</a></li>
-                        <li><a href="#">시설 안내</a></li>
-                        <li><a href="#">공간 안내</a></li>
-                        <li><a href="#">찾아오시는 길</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <button type="button">미래서울도서관</button>
-                    <ul>
-                        <li><a href="#">미래서울관</a></li>
-                        <li><a href="#">서울도서관</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <button type="button">공간대관</button>
-                    <ul>
-                        <li><a href="#">대관안내</a></li>
-                    </ul>
-                </li>
-                <li class="long">
-                    <button type="button">프로그램</button>
-                    <ul>
-                        <li><a href="#">서울갤러리 일정</a></li>
-                        <li><a href="#">프로그램 안내</a></li>
-                    </ul>
-                </li>
-                <li class="long">
-                    <button type="button">알림마당</button>
-                    <ul>
-                        <li><a href="#">공지사항</a></li>
-                        <li><a href="#">언론보도</a></li>
-                        <li><a href="#">미디어 갤러리</a></li>
-                    </ul>
-                </li>
-            </ul>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/logo/logo_pc.svg" class="first" alt="logo">
+        <img src="../../resources/images/logo/logo_pc_dark.svg" class="second" alt="logo">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button">서울 갤러리</button>
+          <ul>
+            <li><a href="#">갤러리 소개</a></li>
+            <li><a href="#">시설 안내</a></li>
+            <li><a href="#">공간 안내</a></li>
+            <li><a href="#">찾아오시는 길</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">미래서울도서관</button>
+          <ul>
+            <li><a href="#">미래서울관</a></li>
+            <li><a href="#">서울도서관</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">공간대관</button>
+          <ul>
+            <li><a href="#">대관안내</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">프로그램</button>
+          <ul>
+            <li><a href="#">서울갤러리 일정</a></li>
+            <li><a href="#">프로그램 안내</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">알림마당</button>
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">언론보도</a></li>
+            <li><a href="#">미디어 갤러리</a></li>
+          </ul>
+        </li>
+      </ul>
 
-            <!-- mobile -->
-            <div class="sidebar tablet-mo-only">
-                <div class="sidebar-top">
-                    <!-- 언어 설정 -->
-                    <div class="tab-wrap">
-                        <button type="button" class="active">KR</button>
-                        <button type="button">EN</button>
-                    </div>
-                    <!-- 닫기 버튼 -->
-                    <button type="button" class="ico-btn circle bg-black ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
-                </div>
-                <ul class="accordion-nav-list">
-                    <li class="active">
-                        <button type="button" class="active">서울 갤러리</button>
-                        <ul>
-                            <li class="active"><a href="#">갤러리 소개</a></li>
-                            <li><a href="#">시설 안내</a></li>
-                            <li><a href="#">공간 안내</a></li>
-                            <li><a href="#">찾아오시는 길</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <button type="button">미래서울도서관</button>
-                        <ul>
-                            <li><a href="#">미래서울관</a></li>
-                            <li><a href="#">서울도서관</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <button type="button">공간대관</button>
-                        <ul>
-                            <li><a href="#">대관안내</a></li>
-                        </ul>
-                    </li>
-                    <li class="long">
-                        <button type="button">프로그램</button>
-                        <ul>
-                            <li><a href="#">서울갤러리 일정</a></li>
-                            <li><a href="#">프로그램 안내</a></li>
-                        </ul>
-                    </li>
-                    <li class="long">
-                        <button type="button">알림마당</button>
-                        <ul>
-                            <li><a href="#">공지사항</a></li>
-                            <li><a href="#">언론보도</a></li>
-                            <li><a href="#">미디어 갤러리</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <div class="custom-select pc-flex-only" data-select="small-round" data-options="1">
-            <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
-                <span class="selected-text"></span>
-            </button>
-            <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <div class="tab-wrap">
+            <button type="button" class="active">KR</button>
+            <button type="button">EN</button>
+          </div>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn circle bg-black ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
         </div>
-
-        <!-- hamburger (mobile) -->
-        <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울 갤러리</button>
+            <ul>
+              <li class="active"><a href="#">갤러리 소개</a></li>
+              <li><a href="#">시설 안내</a></li>
+              <li><a href="#">공간 안내</a></li>
+              <li><a href="#">찾아오시는 길</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">미래서울도서관</button>
+            <ul>
+              <li><a href="#">미래서울관</a></li>
+              <li><a href="#">서울도서관</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">공간대관</button>
+            <ul>
+              <li><a href="#">대관안내</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">프로그램</button>
+            <ul>
+              <li><a href="#">서울갤러리 일정</a></li>
+              <li><a href="#">프로그램 안내</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">알림마당</button>
+            <ul>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">언론보도</a></li>
+              <li><a href="#">미디어 갤러리</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="custom-select pc-flex-only" data-select="small-round" data-options="1">
+      <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+        <span class="selected-text"></span>
+      </button>
+      <ul class="select-list" role="listbox" aria-hidden="true"></ul>
     </div>
+
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
 </header>
 
 <!-- 메인 -->
@@ -204,7 +204,7 @@
         <div class="inner-wrap">
           <div class="title-wrap">
             <div class="tit">
-              <h3>서울 갤러리 일정</h3>
+              <h3>현재 진행중인 일정</h3>
               <span>5</span>
             </div>
           </div>
@@ -536,31 +536,31 @@
           <div class="sec-left5-content">
             <ul class="notice-list">
               <li>
-                <div class="notice-card">
+                <a href="#" class="notice-card">
                   <div class="notice-top">
                     <span class="line-badge gray sm-ver c-green">공지사항</span>
                     <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
-                </div>
+                </a>
               </li>
               <li>
-                <div class="notice-card">
+                <a href="#" class="notice-card">
                   <div class="notice-top">
                     <span class="line-badge gray sm-ver c-green fw-bold">공지사항</span>
                     <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
-                </div>
+                </a>
               </li>
               <li>
-                <div class="notice-card">
+                <a href="#" class="notice-card">
                   <div class="notice-top">
                     <span class="line-badge gray sm-ver">공지사항</span>
                     <span class="date">2025.12.12</span>
                   </div>
                   <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
-                </div>
+                </a>
               </li>
             </ul>
           </div>

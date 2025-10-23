@@ -4,8 +4,8 @@
 .title-wrap {display:flex;align-items:center;justify-content:space-between;}
 .title-wrap.type2 {padding:31px 80px;justify-content:flex-start;gap:24px;}
 .title-wrap > h3 {font-size:36px;color:var(--color-black);font-weight:var(--fw-bold);}
-.tit {display:flex;align-items:center;justify-content:flex-start;}
-.tit > h3 {font-size:22px;}
+.tit {display:flex;align-items:center;justify-content:flex-start;gap:4px;}
+.tit > h3 {font-size:22px;font-weight:var(--fw-bold);}
 .tit > h3 + span {font-size:22px;font-weight:var(--fw-regular);color:var(--color-red);}
 .title-block {display:flex;align-items:center;gap:24px;}
 .title-block > h3 {font-size:32px;font-weight:var(--fw-bold);color:var(--color-black2);}
@@ -18,7 +18,7 @@
 @media (max-width: 1024px) {
   .line-box {padding:15px 18px;}
   .title-wrap > h3 {font-size:24px;}
-  .tit > h3 {font-size:15px;font-weight:var(--fw-bold);}
+  .tit > h3 {font-size:15px;}
   .tit > h3 + span {font-size:15px;font-weight:var(--fw-bold);}
   .title-block {gap:14px;}
   .title-block > h3 {font-size:22px;}
@@ -235,10 +235,11 @@
 .air-datepicker-cell {font-size:20px!important;font-weight:var(--fw-medium);}
 .air-datepicker-cell.-current- {position:relative;color:var(--color-black2)!important;font-weight:var(--fw-bold)!important;}
 .air-datepicker-cell.-current-::before {content:'';width:52px;height:52px;border:2px solid var(--color-black2);border-radius:50%;background-color:var(--color-white);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
-.air-datepicker-cell.-focus-{position:relative;background-color:transparent!important;}
-.air-datepicker-cell.-focus-::before {content:'';width:36px;height:36px;border-radius:50%;background-color:var(--main-bg-color);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
+.air-datepicker-cell.-focus-{position:relative;background-color:transparent!important;color:var(--main-color)!important;font-weight:var(--fw-bold);}
+.air-datepicker-cell.-focus-::before {display:none;}
+.air-datepicker-cell.-focus-.-current-::before{width:52px;height:52px;}
 .air-datepicker-cell.-selected-{background:transparent!important;}
-.air-datepicker-cell.-selected-::before {content:'';width:36px;height:36px;border-radius:50%;background-color:var(--main-color);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
+.air-datepicker-cell.-selected-::before {content:'';width:52px;height:52px;border-radius:50%;background-color:var(--main-color);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
 .air-datepicker-cell.-selected-.-current-{color:var(--color-white)!important;}
 
 @media (max-width: 1024px) {
@@ -249,6 +250,14 @@
   .air-datepicker-body--day-name {font-size:14px!important;}
   .air-datepicker-body--cells.-days- {grid-auto-rows: 40px!important;}
   .air-datepicker-cell {font-size:14px!important;}
+  /* 사이즈 */
+  .air-datepicker-cell.-focus-::before {content:'';width:36px;height:36px;border-radius:50%;background-color:var(--main-color);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
+  .air-datepicker-cell.-focus-.-current-::before{width:52px;height:52px;}
+  .air-datepicker-cell.-selected-::before {content:'';width:52px;height:52px;border-radius:50%;background-color:var(--main-color);box-shadow: 0 8px 16px 4px rgba(0, 0, 0, 0.16);position:absolute;left:50%;top:50%;transform:translate(-50%, -50%);z-index: -1;box-sizing:border-box}
+
+}
+@media (max-width:650px) {
+
 }
 
 /* 테이블 관련 */
@@ -367,7 +376,7 @@
   .textarea-wrap > textarea {padding: 8px 12px;font-size: 13px;border-radius: 2px;}
 }
 
-  /* search-input-wrap */
+/* search-input-wrap */
 .search-input-wrap {width:256px;position: relative;display: inline-block;}
 .search-input-wrap input {width: 100%;padding: 12px 40px 12px 20px;border: 1px solid var(--color-border);border-radius: 100px;background-color: var(--color-white);font-size: 18px;color: var(--color-gray);cursor: pointer;}
 .search-input-wrap::after {content:'';position: absolute;top: 50%;right: 20px;width: 20px;height: 20px;background: url("../images/icons/ico_magnify.svg") no-repeat center;background-size: contain;transform: translateY(-50%);pointer-events: none;}

@@ -446,7 +446,8 @@ img.marquee-text {height: 144px;margin:0 6px;}
 .sec-left5 {margin-top:70px;}
 .sec-left5 .sec-left5-content {margin-top:20px;}
 .sec-left5 .notice-list > li + li {margin-top:20px;}
-.notice-card {display:flex;flex-direction:column;gap:12px;border:1px solid var(--color-border2);border-radius:20px;padding:40px;background-color:var(--box-bg);}
+.sec-left5 .notice-list > li:hover > .notice-card {box-shadow:0 8px 16px 4px rgba(126, 161, 189, 0.2);}
+.notice-card {display:flex;flex-direction:column;gap:12px;border:1px solid var(--color-border2);border-radius:20px;padding:40px;background-color:var(--box-bg);transition:box-shadow 0.3s ease-in-out;}
 .notice-card > .notice-top {display:flex;align-items:center;justify-content:space-between;gap:20px;}
 .notice-card > p {font-size:28px;font-weight:var(--fw-medium);color:var(--color-black2);}
 .notice-card > .notice-top > .date {font-size:16px;font-weight:var(--fw-regular);color:var(--color-gray);}
