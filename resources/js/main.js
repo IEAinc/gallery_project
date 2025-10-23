@@ -416,51 +416,34 @@ $(function() {
   });
 
   /* 사이드바 관련 accordion */
-  /* 사이드바 관련 accordion */
   const $accordion = $(".accordion-nav-list");
 
 // 클릭 또는 포커스 시 열기
-  $accordion.on("click focusin", "> li > button", function () {
+  $accordion.on("click focusin", "> li > button", function (event) {
     const $btn = $(this);
     const $li = $btn.parent();
+    const $currentUl = $btn.next("ul");
 
-    // 이미 활성화된 상태면 클릭 시 닫기 (focusin일 때는 유지)
-    if ($li.hasClass("active") && event.type === "click") {
-      $li.removeClass("active");
-      $btn.removeClass("active");
-      $btn.next("ul").slideUp(200);
-      return;
-    }
+    // focusin일 때는 이미 열려 있으면 아무 동작 안 함
+    if ($li.hasClass("active")) return;
 
-    // 다른 메뉴 닫기 (단, 이번에 포커스된 li는 제외)
+    // 다른 메뉴 닫기
     $accordion.find("> li").not($li).removeClass("active")
       .find("> button").removeClass("active")
-      .next("ul").slideUp(200);
+      .next("ul").stop().slideUp(200);
 
-    // 현재 메뉴 열기
-    $li.addClass("active");
-    $btn.addClass("active");
-    $btn.next("ul").stop(true, true).slideDown(200);
-  });
-
-// 포커스가 아코디언 전체를 벗어났을 때 닫기
-  $accordion.on("focusout", function (e) {
-    const $related = $(e.relatedTarget);
-    if (!$related.closest(".accordion-nav-list").length) {
-      // 완전히 벗어나면 모두 닫기
-      $accordion.find("> li").removeClass("active")
-        .find("> button").removeClass("active")
-        .next("ul").slideUp(200);
+    // 현재 메뉴 토글
+    if ($li.hasClass("active")) {
+      // 열려있으면 닫기
+      $li.removeClass("active");
+      $btn.removeClass("active");
+      $currentUl.stop().slideUp(200);
+    } else {
+      // 닫혀있으면 열기
+      $li.addClass("active");
+      $btn.addClass("active");
+      $currentUl.stop().slideDown(200);
     }
   });
 
-
-  /* [공통]사이드바 */
-  // 윈도우 리사이즈 이벤트
-  $(window).on('resize', function () {
-    if ($(window).width() >= 1200) {
-      // PC 모드로 전환되면 초기화
-      removeActiveClasses();
-    }
-  });
 });
