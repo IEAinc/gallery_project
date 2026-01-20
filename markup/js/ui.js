@@ -15,25 +15,32 @@ $(document).ready(function() {
 
     $('table p.target').each(function () {
         var $this = $(this);
-        var url = $this.children('span').text();
+        var url = $this.children('span').text().trim();
 
-        var $thisBtnPc = $this.parent().next().children('.btnPc')
-        var $thisBtnMo = $this.parent().next().children('.btnMo')
-        var $pcUrl = 'views/user/' + url
-        var $moUrl = 'javascript:PopWin("' + $pcUrl +'","400","740","no");'
+        var $thisBtnPc = $this.parent().next().children('.btnPc');
+        var $thisBtnMo = $this.parent().next().children('.btnMo');
+
+        // ✅ 언어별 경로 분기
+        var basePath = $this.hasClass('en')
+          ? 'views/user-en/'
+          : 'views/user/';
+
+        var $pcUrl = basePath + url;
+        var $moUrl = 'javascript:PopWin("' + $pcUrl + '","400","740","no");';
 
         $thisBtnPc.on('click', function() {
-            $(this).attr('href', $pcUrl)
-            $('table tbody td.btn a').not($(this)).removeClass('is-active')
-            $(this).addClass('is-active')
+            $(this).attr('href', $pcUrl);
+            $('table tbody td.btn a').not($(this)).removeClass('is-active');
+            $(this).addClass('is-active');
         });
         $thisBtnMo.on('click', function() {
-            $(this).attr('href', $moUrl)
-            $('table tbody td.btn a').not($(this)).removeClass('is-active')
-            $(this).addClass('is-active')
+            $(this).attr('href', $moUrl);
+            $('table tbody td.btn a').not($(this)).removeClass('is-active');
+            $(this).addClass('is-active');
         });
-
     });
+
+
 
 
     $('.openDevLog').on('click', function() {

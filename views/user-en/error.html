@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Error</title>
+  <style>
+    body {display:flex;align-items:center;justify-content:center;font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;width:100%;height:100vh;overflow-y:auto;position:relative;}
+    *{line-height:1;margin:0;padding:0;box-sizing:border-box;}
+    /*.visually-hidden {position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);border:0;white-space: nowrap;}*/
+    .error-box {margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:12px;}
+    .error-title-box {display:flex;flex-direction:column;align-items:center;gap:12px;}
+    .error-title-box > p {font-size:24px;font-weight:bold;color:#1A1A1A;}
+    .error-txt {font-size:18px;color:#666666;line-height:1.6;text-align:center;}
+    .btn{display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:100px;background-color:#278352;color:#ffffff;font-size:18px;font-weight:500;line-height:1.6;text-decoration:none;}
+    @media (max-width:650px) {
+      .error-box {gap:8px;padding:16px;}
+      .error-title-box {gap:8px;}
+      .error-txt {font-size:13px;}
+      .btn{gap:6px;padding:8px 14px;font-size:14px;}
+    }
+  </style>
+</head>
+<body>
+<div class="error-box">
+  <div class="error-title-box">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g clip-path="url(#clip0_5684_4512)">
+        <circle cx="20" cy="20" r="20" fill="#FDDC7E"/>
+        <path d="M20 25.0417C18.8954 25.0417 18 25.9278 18 27.0208C18 28.1139 18.8954 29 20 29C21.1046 29 22 28.1139 22 27.0208C22 25.9278 21.1046 25.0417 20 25.0417Z" fill="#1A1A1A"/>
+        <path d="M20 10C18.8954 10 18 10.8861 18 11.9792V21.4792C18 22.5722 18.8954 23.4583 20 23.4583C21.1046 23.4583 22 22.5722 22 21.4792V11.9792C22 10.8861 21.1046 10 20 10Z" fill="#1A1A1A"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_5684_4512">
+          <rect width="40" height="40" rx="20" fill="white"/>
+        </clipPath>
+      </defs>
+    </svg>
+    <p>요청하신 페이지를 찾을 수 없습니다.</p>
+  </div>
+
+  <div class="error-txt">
+    입력하신 주소가 존재하지 않거나,<br>
+    페이지 주소가 변경되었거나 삭제되었을 수 있습니다.<br>
+    Request faild with status code 404
+  </div>
+  <a href="#" class="btn">
+    홈으로 돌아가기
+    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4.60742 9.64282H15.1074M15.1074 9.64282L9.85742 4.39282M15.1074 9.64282L9.85742 14.8928" stroke="#fff
+" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+</div>
+</body>
+</html>

@@ -2,7 +2,8 @@
 <html lang=ko>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <!-- css -->
@@ -14,7 +15,7 @@
   <script src="../../resources/lib/swiper/swiper.js"></script>
 
   <!-- tui calenadar -->
-  <link rel="stylesheet" href="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.css" />
+  <link rel="stylesheet" href="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.css">
   <script src="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.js"></script>
 
   <!-- js -->
@@ -22,7 +23,6 @@
 
   <title>가이드 페이지</title>
   <style>
-    body {padding:24px;}
     main {max-width:1920px;margin:0 auto;padding-top:40px;}
     .guide-wrap {border:1px solid var(--color-border);border-radius:12px;padding:24px;background-color:var(--color-white);}
     .guide-wrap + .guide-wrap {margin-top:24px;}
@@ -31,12 +31,36 @@
     .guide-title-wrap h4 {font-size:36px;font-weight:var(--fw-bold);color:var(--color-black);}
     .guide-list > li {font-size:24px;font-weight:var(--fw-medium);}
     .guide-list > li + li {margin-top:8px;}
+    .guide-box {padding:12px;border-radius:8px;border:1px solid var(--color-border);}
+    .guide-box + .guide-box {margin-top:20px;}
+    .guide-box .small-tit {padding:4px 18px;border-radius:4px;background-color:var(--main-bg-color);position:relative;font-size:20px;font-weight:var(--fw-bold);margin-bottom:16px;}
+    .guide-box .small-tit::before {content:'';width:5px;height:5px;background-color:var(--color-black2);border-radius:50%;position:absolute;left:0;top:50%;transform:translateY(-50%);}
+    .guide-box ul:not(.reference-list) > li > small {font-size:14px;font-weight:var(--fw-bold);display:inline-block;margin-right:12px;}
+    .guide-box ul:not(.reference-list) > li {display:flex;align-items: center;}
   </style>
 </head>
 <body>
 <!-- [웹 접근성] : 본문 바로가기 -->
 <a href="#main" id="skip-nav">본문 바로가기</a>
 <!-- 헤더 -->
+<div class="top-wrap pc-tablet-flex-only">
+  <div class="inner-wrap">
+    <div class="right">
+      <h2><img src="../../resources/images/logo/seoul_logo.svg" alt="서울특별시"></h2>
+      <div class="notice-wrap">
+        <p class="ico-text speaker">2025년 서울시 시민참여예산위원회 위원 공개모집</p>
+      </div>
+    </div>
+    <div class="left">
+      <ul>
+        <li><a href="#">서울소식</a></li>
+        <li><a href="#">응답소</a></li>
+        <li><a href="#">정보공개</a></li>
+        <li><a href="#">분야별정보</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
 <header>
   <!-- [사이드바] dim 처리 영역 -->
   <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
@@ -50,7 +74,7 @@
     <!-- gnb -->
     <nav>
       <!-- pc -->
-      <ul class="pc-nav pc-only">
+      <ul class="pc-nav pc-flex-only">
         <li>
           <button type="button">서울 갤러리</button>
           <ul>
@@ -61,10 +85,10 @@
           </ul>
         </li>
         <li>
-          <button type="button">미래서울도서관</button>
+          <button type="button">미래서울도시관</button>
           <ul>
             <li><a href="#">미래서울관</a></li>
-            <li><a href="#">서울도서관</a></li>
+            <li><a href="#">세계도시관</a></li>
           </ul>
         </li>
         <li>
@@ -91,7 +115,7 @@
       </ul>
 
       <!-- mobile -->
-      <div class="sidebar active tablet-only">
+      <div class="sidebar tablet-mo-only">
         <div class="sidebar-top">
           <!-- 언어 설정 -->
           <div class="tab-wrap">
@@ -112,10 +136,10 @@
             </ul>
           </li>
           <li>
-            <button type="button">미래서울도서관</button>
+            <button type="button">미래서울도시관</button>
             <ul>
               <li><a href="#">미래서울관</a></li>
-              <li><a href="#">서울도서관</a></li>
+              <li><a href="#">세계도시관</a></li>
             </ul>
           </li>
           <li>
@@ -150,7 +174,7 @@
     </div>
 
     <!-- hamburger (mobile) -->
-    <button type="button" class="ico-btn ico-hamburger tablet-inline-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
   </div>
 </header>
 
@@ -164,6 +188,7 @@
     <div class="guide-box">
       <ul class="guide-list">
         <li>1. 텍스트</li>
+        <li>2. Button & Badge</li>
       </ul>
     </div>
   </div>
@@ -211,22 +236,63 @@
           <p class="text-link">미래서울관</p>
         </li>
       </ul>
-      <!-- 뱃지 -->
+    </div>
+  </div>
+  <!-- 2. 버튼 -->
+  <div class="guide-wrap">
+    <div class="guide-title-wrap">
+      <h4>2. Button & Badge</h4>
+    </div>
+    <!-- 버튼 -->
+    <div class="guide-box">
+      <p class="small-tit">btn (버튼)</p>
+      <ul>
+        <li><button type="button" class="btn">목록</button></li>
+        <li><small>br-green (라인 버전)</small><button type="button" class="btn br-green">목록</button></li>
+        <li><a href="#" class="btn bg-black link">자세히보기</a></li>
+        <li><a href="#" class="btn bg-transparent link">자세히보기</a></li>
+        <li><small>xs-ver(더 작은 버전)</small><button type="button" class="btn size-sm bg-black">답변</button></li>
+      </ul>
+    </div>
+    <!-- 아이콘과 텍스타가 들어간 버튼 -->
+    <div class="guide-box">
+      <p class="small-tit">insert-ico (아이콘과 텍스타가 들어간 버튼 (아이콘 중간))</p>
+      <ul>
+        <li><a href="#" class="btn bg-green insert-ico"><span class="ico-pen ico"></span>문의하기</a></li>
+        <li><a href="#" class="btn bg-green insert-ico"><span class="ico-register ico"></span>등록</a></li>
+      </ul>
+    </div>
+    <!-- 뱃지 -->
+    <div class="guide-box">
+      <p class="small-tit">color-badge (색상이 들어간 버튼) || 뱃지형태</p>
       <ul>
         <li><button type="button" class="color-badge">미래관</button></li>
         <li><button type="button" class="color-badge active">서울관</button></li>
-        <li><button type="button" class="color-badge">미래서울관</button></li>
         <li><button type="button" class="color-badge green active">공연장</button></li>
-        <li><button type="button" class="color-badge line">미래서울관</button></li>
+        <li><small>line(라인 버전)</small><button type="button" class="color-badge line">미래서울관</button></li>
         <li><button type="button" class="color-badge line active">미래서울관</button></li>
-        <li><span class="line-badge">2025.12.12 - 2025.12.31</span></li>
-        <li><span class="line-badge gray sm-ver c-green">공지사항</span></li>
+        <li><small>sm-ver(작은 버전)</small><button type="button" class="color-badge sm-ver bg-dark">답변</button></li>
+        <li><small>sm-ver(작은 버전)</small><button type="button" class="color-badge sm-ver bg-dark">답변</button></li>
       </ul>
-      <!-- 버튼 -->
+    </div>
+    <!-- 라인이 들어간 버튼 -->
+    <div class="guide-box">
+      <p class="small-tit">line-badge (라인이 들어간 뱃지형태)</p>
       <ul>
-        <li><a href="#" class="btn bg-black link">자세히보기</a></li>
-        <li><a href="#" class="btn bg-transparent link">자세히보기</a></li>
+        <li><small>일반버전</small><span class="line-badge">2025.12.12 - 2025.12.31</span></li>
+        <li><small>sm-ver (작은 버전)</small><span class="line-badge sm-ver">공지사항</span></li>
+        <li><small>sm-ver gray(작은 버전 + 색상)</small><span class="line-badge gray sm-ver c-green">공지사항</span></li>
+        <li><small>xs-ver gray(더 작은 버전 + 색상)</small><span class="line-badge gray xs-ver c-green">공지사항</span></li>
+        <li><small>xs-ver gray(더 작은 버전 + 색상)</small><span class="line-badge green xs-ver c-green">공지사항</span></li>
       </ul>
+    </div>
+  </div>
+  <!-- 3. 카드 형태 -->
+  <div class="guide-wrap">
+    <div class="guide-title-wrap">
+      <h4>사용한 카드 형태 컴포넌트</h4>
+    </div>
+    <div class="guide-box">
       <!-- 공지사항 -->
       <div class="notice-card">
         <div class="notice-top">
@@ -236,104 +302,224 @@
         <p class="ellipsis">2025년 12월 서울갤러리 전시일정안내</p>
       </div>
     </div>
-  </div>
-  <!-- 2. input -->
-  <div class="guide-wrap">
-    <div class="guide-title-wrap">
-      <h4>2. Input</h4>
-    </div>
     <div class="guide-box">
-<!--      <div id="calendar" class="schedule-calendar" style="height: 800px;"></div>-->
-    </div>
-  </div>
-  <!-- 메인 카드 -->
-  <div class="guide-wrap">
-    <div class="guide-title-wrap">
-      <h4>2. 메인 카드</h4>
-    </div>
-    <div class="guide-box">
-      <div class="scroll-wrap">
-        <ul class="calendar-list">
-          <li>
-            <div class="calendar-card">
-              <span>10</span>
-              <div class="calendar-desc">
-                <p class="ellipsis">서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관</p>
-                <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="calendar-card">
-              <span>11</span>
-              <div class="calendar-desc">
-                <p class="ellipsis">현대 미술의 새로운 경계</p>
-                <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="calendar-card">
-              <span>15</span>
-              <div class="calendar-desc">
-                <p class="ellipsis">예술과 기술의 융합</p>
-                <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="calendar-card">
-              <span>24</span>
-              <div class="calendar-desc">
-                <p class="ellipsis">어린이 미술 체험</p>
-                <span class="ico-text xs-ver clock-gray">2025.12.24</span>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="calendar-card">
-              <span>31</span>
-              <div class="calendar-desc">
-                <p class="ellipsis">연말 전시회</p>
-                <span class="ico-text xs-ver clock-gray">2025.12.31 - 2025.12.31</span>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-  <!-- 테이블 -->
-  <div class="guide-wrap">
-    <div class="guide-title-wrap">
-      <h4>3. 테이블</h4>
-    </div>
-    <div class="guide-box">
-      <!-- List sort -->
-      <div class="list-sort">
-        <p class="total">Total<span class="c-purple">123</span></p>
-        <div class="search-wrap">
-          <div class="select-wrap">
-            <select>
-              <option>전체</option>
-            </select>
-          </div>
-          <div class="search-input-wrap">
-            <input type="text" placeholder="검색어를 입력해주세요."/>
-          </div>
-          <button type="button" class="btn normal-rounded bg-black">검색</button>
+      <p class="small-tit">메인페이지 - 달력</p>
+      <div class="calendar-card">
+        <span>10</span>
+        <div class="calendar-desc">
+          <p class="ellipsis">서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관서울갤러리 개관 기념 전시관</p>
+          <span class="ico-text xs-ver clock-gray">2025.12.10. - 2025.12.31</span>
         </div>
       </div>
-      <!-- 테이블 -->
-      <div class="custom-table">
-        <table class="pc-mo-only">
+    </div>
+    <div class="guide-box">
+      <p class="small-tit">프로그램 박스</p>
+      <div class="program-box reverse-ver size-lg">
+        <div class="desc-wrap col-ver">
+          <div class="desc-box">
+            <div class="badge-list">
+              <span class="color-badge sm-ver bg-green">체험</span>
+            </div>
+            <p class="ellipsis">2025 서울갤러리 특별 전시회</p>
+            <ul class="info-list">
+              <li>
+                <span class="c-gray">신청 대상</span>
+                <span>대한민국 모든 시만</span>
+              </li>
+              <li>
+                <span class="c-gray">운영 시간</span>
+                <span>09:00 ~ 18:00</span>
+              </li>
+              <li>
+                <span class="c-gray">수용 인원</span>
+                <span>1 ~ 999명</span>
+              </li>
+              <li>
+                <span class="c-gray">대관료</span>
+                <span>무료</span>
+              </li>
+              <li>
+                <span class="c-gray">주차공간</span>
+                <span>없음</span>
+              </li>
+            </ul>
+            <a href="#" class="btn bg-black link">신청 바로가기</a>
+          </div>
+          <div class="notice-info-wrap">
+            <p></p>
+            <ul class="reference-list">
+              <li>예약 변경 및 취소는 최소 7일 전까지 가능하며, 이후에는 위약금이 발생할 수 있습니다.</li>
+              <li>시설 이용 중 발생한 물품 파손 및 안전사고에 대한 책임은 사용자에게 있습니다.</li>
+              <li>행사 종료 후 반드시 원상복구를 원칙으로 하며, 쓰레기는 분리 배출해 주시기 바랍니다.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="img-box">
+          <!--<img src="" alt="">-->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 4. 모달 -->
+  <div class="guide-wrap">
+    <div class="guide-title-wrap">
+      <h4>모달</h4>
+    </div>
+    <div class="guide-box">
+      <button type="button" id="aa" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal1'))">[모달1] 뉴스레터 팝업</button>
+      <button type="button" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal2'))">[모달] 가로형</button>
+      <button type="button" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal3'))">[모달] 세로형</button>
+      <button type="button" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal4'))">[모달] 3개 동시에</button>
+      <button type="button" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal5'))">[모달] 2개 동시에</button>
+      <button type="button" class="btn size-sm bg-black" onclick="this.__applyClickHandler__(() => showModal('modal6'))">[모달] 비밀번호를 입력해주세요</button>
+      <!-- 모달 -->
+      <!-- [모달] 1. 현재 뉴스레터를 구독하고 있는 이메일입니다. -->
+      <div id="modal1" class="modal" data-modal-type="confirm-ver">
+        <div class="modal-content xs pd-auto">
+          <div class="confirm-box">
+            <p class="c-em">현재 뉴스레터를 구독하고 있는 이메일입니다.</p>
+          </div>
+          <div class="flex-wrap center">
+            <button type="button" class="btn bg-black size-sm" onclick="hideModal('modal1','aa')">닫기</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- [모달 가로형] -->
+      <div id="modal2" class="modal" data-modal-type="modal-ver">
+        <div class="modal-content xs">
+          <div class="modal-body pd-0 h-auto">
+            <div class="modal-ad-box">
+              <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+            </div>
+          </div>
+          <div class="flex-wrap center">
+            <button type="button" class="modal-btn" onclick="this.__applyClickHandler__(() => showModal('modal1'))">오늘하루 열지 않음</button>
+            <button type="button" class="modal-btn bg-black" onclick="hideModal('modal2')">닫기</button>
+          </div>
+        </div>
+      </div>
+      <!-- [모달 세로형] -->
+      <div id="modal3" class="modal" data-modal-type="modal-ver">
+        <div class="modal-content xxs">
+          <div class="modal-body pd-0 h-auto">
+            <div class="modal-ad-box column-ver">
+              <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+            </div>
+          </div>
+          <div class="flex-wrap center">
+            <button type="button" class="modal-btn" onclick="hideModal('modal3')">오늘하루 열지 않음</button>
+            <button type="button" class="modal-btn bg-black" onclick="hideModal('modal3')">닫기</button>
+          </div>
+        </div>
+      </div>
+      <!-- [모달 동시에 3개] -->
+      <div id="modal4" class="modal" data-modal-type="multiple-modal-ver">
+        <div class="modal-content-wrap">
+          <!-- 모달1 -->
+          <div id="modal-insert1" class="modal-content xxs2" data-multi-type="long">
+            <div class="modal-body h-auto pd-0">
+              <div class="modal-ad-box column-ver">
+                <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+              </div>
+            </div>
+            <div class="flex-wrap center"  data-multi-type="short">
+              <button type="button" class="modal-btn" onclick="hideModal('modal-insert1')">오늘하루 열지 않음</button>
+              <button type="button" class="modal-btn bg-black" onclick="hideModal('modal-insert1')">닫기</button>
+            </div>
+          </div>
+          <!-- 모달2 -->
+          <div id="modal-insert2" class="modal-content xxs2"  data-multi-type="long">
+            <div class="modal-body h-auto pd-0">
+              <div class="modal-ad-box column-ver">
+                <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+              </div>
+            </div>
+            <div class="flex-wrap center">
+              <button type="button" class="modal-btn" onclick="hideModal('modal-insert2')">오늘하루 열지 않음</button>
+              <button type="button" class="modal-btn bg-black" onclick="hideModal('modal-insert2')">닫기</button>
+            </div>
+          </div>
+          <!-- 모달3 -->
+          <div id="modal-insert3" class="modal-content xxs"  data-multi-type="short">
+            <div class="modal-body h-auto pd-0">
+              <div class="modal-ad-box column-ver">
+                <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+              </div>
+            </div>
+            <div class="flex-wrap center">
+              <button type="button" class="modal-btn" onclick="hideModal('modal-insert3')">오늘하루 열지 않음</button>
+              <button type="button" class="modal-btn bg-black" onclick="hideModal('modal-insert3')">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [모달 동시에 2개] -->
+      <div id="modal5" class="modal" data-modal-type="multiple-modal-ver">
+        <div class="modal-content-wrap">
+          <!-- 모달4 -->
+          <div id="modal-insert4" class="modal-content xxs2"  data-multi-type="short">
+            <div class="modal-body h-auto pd-0">
+              <div class="modal-ad-box">
+                <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+              </div>
+            </div>
+            <div class="flex-wrap center">
+              <button type="button" class="modal-btn" onclick="hideModal('modal-insert4')">오늘하루 열지 않음</button>
+              <button type="button" class="modal-btn bg-black" onclick="hideModal('modal-insert4')">닫기</button>
+            </div>
+          </div>
+          <!-- 모달5 -->
+          <div id="modal-insert5" class="modal-content xxs"  data-multi-type="long">
+            <div class="modal-body h-auto pd-0">
+              <div class="modal-ad-box column-ver">
+                <img src="../../resources/images/main-page/main-section4-1.png" alt="">
+              </div>
+            </div>
+            <div class="flex-wrap center">
+              <button type="button" class="modal-btn" onclick="hideModal('modal-insert5')">오늘하루 열지 않음</button>
+              <button type="button" class="modal-btn bg-black" onclick="hideModal('modal-insert5')">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- [모달] 비밀번호를 입력해주세요. -->
+      <div id="modal6" class="modal" data-modal-type="auto-height-ver">
+        <div class="modal-content xs pd-auto">
+          <div class="normal-title-wrap">
+            <h3>비밀번호를 입력해주세요</h3>
+            <button type="button" onclick="hideModal('modal6')" class="close-btn"><span class="visually-hidden">닫기</span></button>
+          </div>
+          <div class="modal-body pd-40">
+            <div class="m-search-wrap">
+              <label class="input-wrap">
+                <input type="text" value="" placeholder="비밀번호 입력">
+              </label>
+              <button type="button" class="btn bg-black size-sm">확인</button>
+            </div>
+            <p class="info-text">비밀번호를 입력해주세요</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 5. 테이블 -->
+  <div class="guide-wrap">
+    <div class="guide-title-wrap">
+      <h4>5. 테이블</h4>
+    </div>
+    <!-- table -->
+    <div class="guide-box">
+      <p class="small-tit">Pc/Mo 테이블</p>
+      <!-- 테이블(pc) -->
+      <div class="custom-table pc-mo-only">
+        <table>
           <caption class="visually-hidden">문의하기</caption>
           <colgroup>
-            <col style="width:104px;"/>
-            <col style="width:auto;" />
-            <col style="width:140px;"/>
-            <col style="width:140px" />
+            <col style="width:104px;">
+            <col style="width:auto;">
+            <col style="width:140px;">
+            <col style="width:140px">
           </colgroup>
           <!--
           <thead>
@@ -453,7 +639,171 @@
           </tr>
           </tbody>
         </table>
-        <table class="mo-pc-only">
+      </div>
+      <!-- 테이블 (pc) -->
+      <div class="custom-table pc-tablet-only">
+        <table>
+          <caption class="visually-hidden">알림마당 > 공지사항</caption>
+          <colgroup>
+            <col style="width:104px;">
+            <col style="width: calc(100% - 104px - 160px - 160px);;">
+            <col style="width:160px;">
+            <col style="width:160px">
+          </colgroup>
+          <!--
+          <thead>
+          <tr>
+
+          </tr>
+          </thead>
+          -->
+          <tbody>
+          <!-- 공지글일 경우 : point  클래스 추가 -->
+          <tr class="point">
+            <td>
+              <div class="td-wrap justify-end">
+                <span class="ico-btn circle ico-notice bg-main"><span class="visually-hidden">공지글</span></span>
+              </div>
+            </td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr class="point">
+            <td>
+              <div class="td-wrap justify-end">
+                <span class="ico-btn circle ico-notice bg-main"><span class="visually-hidden">공지글</span></span>
+              </div>
+            </td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <!-- 일반 글일 경우 -->
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          <tr>
+            <td><div class="td-wrap"><p class="left">8</p></div></td>
+            <td>
+              <div class="td-wrap">
+                <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                <p class="ellipsis bold left">
+                  현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.현재 진행되고 있는 전시물에 대한 흥미로운 정보가 가득합니다.
+                </p>
+              </div>
+            </td>
+            <td><div class="td-wrap"><p class="center">2025.12.12</p></div></td>
+            <td><div class="td-wrap"><p class="right">123</p></div></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 테이블(mo) -->
+      <div class="custom-table mo-pc-only">
+        <table>
           <tr>
             <td>
               <div class="td-wrap col">
@@ -596,6 +946,312 @@
           </tr>
         </table>
       </div>
+      <!-- 테이블 (mo) -->
+      <div class="custom-table mo-only">
+        <table>
+          <caption class="visually-hidden">알림마당 > 공지사항</caption>
+          <!-- 공지글일 경우 : point  클래스 추가 -->
+          <tr class="point">
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="ico-btn circle ico-notice bg-main"><span class="visually-hidden">공지글</span></span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr class="point">
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="ico-btn circle ico-notice bg-main"><span class="visually-hidden">공지글</span></span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <!-- 일반 글일 경우 -->
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <div class="td-wrap col">
+                <div class="flex-wrap gap-8 mb-4">
+                  <span class="txt-xxs c-gray">9</span>
+                  <span class="line-badge xs-ver c-green fw-semi-bold">공지</span>
+                </div>
+                <p class="ellipsis txt-xs c-black fw-medium left mb-4">
+                  서울갤러리 전시에 대해서 궁금합니다. 서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.서울갤러리 전시에 대해서 궁금합니다.
+                </p>
+                <ul class="bar-list">
+                  <li class="c-gray txt-xxs">2025.12.12</li>
+                  <li class="c-gray txt-xxs">123</li>
+                </ul>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="guide-box">
+      <p class="small-tit">입력용 테이블</p>
+      <!-- 테이블 -->
+      <div class="custom-ui-table">
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              닉네임
+            </div>
+            <div class="c-td-wrap">
+              <label class="input-wrap">
+                <input type="text" placeholder="텍스트를 입력해주세요">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              비밀번호
+            </div>
+            <div class="c-td-wrap mo-col">
+              <label class="input-wrap">
+                <input type="text" placeholder="텍스트를 입력해주세요">
+              </label>
+              <span class="error-msg">비밀번호 분실 시 찾을 수 없으니 주의해 주세요.</span>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important">
+              제목
+            </div>
+            <div class="c-td-wrap">
+              <label class="input-wrap">
+                <input type="text" placeholder="">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="c-row col1">
+          <div class="c-col">
+            <div class="c-th-wrap star-important al-start">
+              문의내용
+            </div>
+            <div class="c-td-wrap">
+              <label class="textarea-wrap">
+                <textarea placeholder="텍스트를 입력해주세요"></textarea>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- List sort -->
+    <div class="guide-box">
+      <p class="small-tit">테이블 상단</p>
+      <div class="list-sort">
+        <p class="total">Total<span class="c-red">123</span></p>
+        <div class="search-wrap">
+          <label class="select-wrap">
+            <select>
+              <option>전체</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="검색어를 입력해주세요.">
+          </div>
+          <button type="button" class="btn normal-rounded bg-black">검색</button>
+        </div>
+      </div>
+      <div class="list-sort">
+        <p class="total">Total<span class="c-purple">123</span></p>
+        <div class="search-wrap">
+          <label class="select-wrap">
+            <select>
+              <option>전체</option>
+            </select>
+          </label>
+          <div class="search-input-wrap">
+            <input type="text" placeholder="검색어를 입력해주세요.">
+          </div>
+          <button type="button" class="btn normal-rounded bg-black">검색</button>
+        </div>
+      </div>
+      <div class="notice-wrap end">
+        <span class="c-red notice-txt">* 표시는 필수 입력입니다.</span>
+      </div>
+    </div>
+    <!-- 페이지네이션 -->
+    <div class="guide-box">
+      <p class="small-tit">페이지네이션</p>
       <!-- 페이지네이션 -->
       <div class="pagination-wrap">
         <div class="pagination">
@@ -616,63 +1272,10 @@
           <a href="#" class="btn bg-green insert-ico"><span class="ico-pen ico"></span>문의하기</a>
         </div>
       </div>
-
-      <!-- 테이블 -->
-      <div class="notice-wrap end">
-        <span class="c-red notice-txt">* 표시는 필수 입력입니다.</span>
-      </div>
-      <div class="custom-ui-table">
-        <div class="c-row col1">
-          <div class="c-col">
-            <div class="c-th-wrap star-important">
-              닉네임
-            </div>
-            <div class="c-td-wrap">
-              <label class="input-wrap">
-                <input type="text" placeholder="텍스트를 입력해주세요"/>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="c-row col1">
-          <div class="c-col">
-            <div class="c-th-wrap star-important">
-              비밀번호
-            </div>
-            <div class="c-td-wrap mo-col">
-              <label class="input-wrap">
-                <input type="text" placeholder="텍스트를 입력해주세요"/>
-              </label>
-              <span class="error-msg">비밀번호 분실 시 찾을 수 없으니 주의해 주세요.</span>
-            </div>
-          </div>
-        </div>
-        <div class="c-row col1">
-          <div class="c-col">
-            <div class="c-th-wrap star-important">
-              제목
-            </div>
-            <div class="c-td-wrap">
-              <label class="input-wrap">
-                <input type="text" placeholder=""/>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="c-row col1">
-          <div class="c-col">
-            <div class="c-th-wrap star-important al-start">
-              문의내용
-            </div>
-            <div class="c-td-wrap">
-              <label class="textarea-wrap">
-                <textarea placeholder="텍스트를 입력해주세요"></textarea>
-              </label>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- -->
+    </div>
+    <!-- 테이블 하단 -->
+    <div class="guide-box">
+      <p class="small-tit">테이블 하단</p>
       <div class="btn-wrap">
         <a href="#" class="btn br-green">목록</a>
         <a href="#" class="btn bg-green insert-ico"><span class="ico-register ico"></span>등록</a>
@@ -680,18 +1283,43 @@
     </div>
   </div>
 </main>
+
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-right">
+      <h2>
+        <img src="../../resources/images/logo/footer_logo.svg" alt="서울갤러리 로고">
+      </h2>
+      <div class="footer-info">
+        <ul>
+          <li><a href="#" class="line-badge sm-ver c-white">개인정보처리방침</a></li>
+          <li><a href="#" class="line-badge sm-ver c-white">영상정보처리기기 운영 관리방침</a></li>
+        </ul>
+        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br>© 2025 SEOUL GALLERY. All Rights Reserved</p>
+        <a href="#" class="btn bg-black-transparent sm-ver insert-ico">서울갤러리 문의하기<span class="arrow-right ico"></span></a>
+      </div>
+    </div>
+    <div class="footer-left">
+      <div class="news-letter-box">
+        <span class="tit">NEWSLETTER</span>
+        <span class="desc">서울갤러리의 소식과 이야기를 뉴스레터로 받아보세요</span>
+        <div class="news-letter-input-wrap">
+          <div>
+            <label>
+              <input type="text" placeholder="E-MAIL">
+            </label>
+            <button type="button" class="ico-btn bg-black link circle"><span class="visually-hidden">이메일 전송하기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 <script>
   // 셀렉트 박스 변수 관리
-  const selectOptions1 = [
-    { value: '한국어',  tag: 'button' },/*discount: '-50%', */
-    // { value: '옵션2', discount: '-50%', tag: 'a', href: 'https://example.com/link1' },
-    { value: '일본어',  tag: 'button' }
-  ];
 
-  // custom-select 요소를 개별적으로 호출
-  initializeCustomSelect(document.querySelector('.custom-select[data-options="1"]'), selectOptions1, {
-    initialValue:selectOptions1[0].value
-  })
   // 스케줄 캘린더
   // document.addEventListener("DOMContentLoaded", function () {
   //   const Calendar = window.tui.Calendar;

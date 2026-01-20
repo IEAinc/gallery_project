@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- tui calenadar -->
+  <link rel="stylesheet" href="../../resources/lib/toastCalendar/toast.css">
+  <script src="../../resources/lib/toastCalendar/toast.js"></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>프로그램 - 서울갤러리 일정</title>
+  <style>
+    /* TOAST UI Calendar 컨테이너 스타일 */
+
+
+  </style>
+
+</head>
+<body>
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">본문 바로가기</a>
+<!-- 헤더 -->
+<div class="top-wrap pc-tablet-flex-only">
+  <div class="inner-wrap">
+    <div class="right">
+      <h2><img src="../../resources/images/logo/seoul_logo.svg" alt="서울특별시"></h2>
+      <div class="notice-wrap">
+        <p class="ico-text speaker">2025년 서울시 시민참여예산위원회 위원 공개모집</p>
+      </div>
+    </div>
+    <div class="left">
+      <ul>
+        <li><a href="#">서울소식</a></li>
+        <li><a href="#">응답소</a></li>
+        <li><a href="#">정보공개</a></li>
+        <li><a href="#">분야별정보</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/logo/logo_pc.svg" alt="logo">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button">서울 갤러리</button>
+          <ul>
+            <li><a href="#">갤러리 소개</a></li>
+            <li><a href="#">시설 안내</a></li>
+            <li><a href="#">공간 안내</a></li>
+            <li><a href="#">찾아오시는 길</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">미래서울도시관</button>
+          <ul>
+            <li><a href="#">미래서울관</a></li>
+            <li><a href="#">세계도시관</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">공간대관</button>
+          <ul>
+            <li><a href="#">대관안내</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">프로그램</button>
+          <ul>
+            <li><a href="#">서울갤러리 일정</a></li>
+            <li><a href="#">프로그램 안내</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">알림마당</button>
+          <ul>
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">언론보도</a></li>
+            <li><a href="#">미디어 갤러리</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <div class="tab-wrap">
+            <button type="button" class="active">KR</button>
+            <button type="button">EN</button>
+          </div>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn circle bg-black ico-close" onclick="closeSideBar()"><span class="visually-hidden">닫기</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">서울 갤러리</button>
+            <ul>
+              <li class="active"><a href="#">갤러리 소개</a></li>
+              <li><a href="#">시설 안내</a></li>
+              <li><a href="#">공간 안내</a></li>
+              <li><a href="#">찾아오시는 길</a></li>
+            </ul>
+          </li>
+          <li>
+          <button type="button">미래서울도시관</button>
+          <ul>
+            <li><a href="#">미래서울관</a></li>
+            <li><a href="#">세계도시관</a></li>
+          </ul>
+        </li>
+          <li>
+            <button type="button">공간대관</button>
+            <ul>
+              <li><a href="#">대관안내</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">프로그램</button>
+            <ul>
+              <li><a href="#">서울갤러리 일정</a></li>
+              <li><a href="#">프로그램 안내</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">알림마당</button>
+            <ul>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">언론보도</a></li>
+              <li><a href="#">미디어 갤러리</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="custom-select pc-flex-only" data-select="small-round" data-options="1">
+      <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+        <span class="selected-text"></span>
+      </button>
+      <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+    </div>
+
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main" class="sub-page">
+  <!-- 서브 타이틀 -->
+  <div class="sub-title-wrap">
+    <img src="../../resources/images/main-page/sub-bg-mo.png" alt="" class="mo-only">
+    <div class="sub-title">
+      <span class="symbol">프로그램</span>
+      <h2>서울갤러리 일정</h2>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 컨텐츠 -->
+  <div class="sub-inner-wrap">
+    <section class="sec-program-schedule">
+      <div class="left">
+        <div class="c-box">
+          <div class="calendar-header">
+            <button id="prevMonth">이전달</button>
+            <span id="currentMonth"></span>
+            <button id="nextMonth">다음달</button>
+          </div>
+          <div id="calendar" class="schedule-calendar"></div>
+        </div>
+      </div>
+      <div class="right">
+        <!-- 오늘의 일정 -->
+        <div class="c-box">
+          <div class="inner-title-wrap">
+            <h4>오늘의 일정</h4>
+            <span class="line-badge sm-ver2 br-green c-green">2025년9월16일</span>
+          </div>
+          <div class="content-top-line-box pd-ver">
+            <ul class="dot-list">
+              <li>2025 서울갤러리 특별 전시회</li>
+              <li>서울갤러리 아트 워크숍</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 9월의 일정 -->
+        <div class="c-box">
+          <div class="inner-title-wrap">
+            <h4>9월의 일정</h4>
+          </div>
+          <div class="content-top-line-box">
+            <ul class="schedule-list2">
+              <li>
+                <span class="circle-badge">
+                  <span class="tit">20-22</span>
+                  <span>2025.09</span>
+                </span>
+                <div class="desc-wrap">
+                  <div class="desc">
+                    <p>2025 서울갤러리 특별 전시회</p>
+                    <p class="sub">2025 서울갤러리 특별 전시회는 현대 미술의 다양한 흐름을 소개하는 자리입니다. 이 전시회에서는 국내외 유명 아티스트들의 작품을 감상할 수 있으며, 관람객들은 예술과 소통할 수 있는 다양한 프로그램에 참여할 수 있습니다. 특별한 경험을 제공하는 이번 전시회에 많은 관심과 참여 부탁드립니다.</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="ico-text md-ver c-gray dot-gray">장소</span>
+                      <span>지하 1층 동그라미 홀</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <span class="circle-badge">
+                  <span class="tit">상시</span>
+                </span>
+                <div class="desc-wrap">
+                  <div class="desc">
+                    <p>2025 서울갤러리 특별 전시회</p>
+                    <p class="sub">2025 서울갤러리 특별 전시회는 현대 미술의 다양한 흐름을 소개하는 자리입니다. 이 전시회에서는 국내외 유명 아티스트들의 작품을 감상할 수 있으며, 관람객들은 예술과 소통할 수 있는 다양한 프로그램에 참여할 수 있습니다. 특별한 경험을 제공하는 이번 전시회에 많은 관심과 참여 부탁드립니다.</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="ico-text md-ver c-gray dot-gray">장소</span>
+                      <span>지하 1층 동그라미 홀</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <span class="circle-badge">
+                  <span class="tit">20-22</span>
+                  <span>2025.09</span>
+                </span>
+                <div class="desc-wrap">
+                  <div class="desc">
+                    <p>2025 서울갤러리 특별 전시회</p>
+                    <p class="sub">2025 서울갤러리 특별 전시회는 현대 미술의 다양한 흐름을 소개하는 자리입니다. 이 전시회에서는 국내외 유명 아티스트들의 작품을 감상할 수 있으며, 관람객들은 예술과 소통할 수 있는 다양한 프로그램에 참여할 수 있습니다. 특별한 경험을 제공하는 이번 전시회에 많은 관심과 참여 부탁드립니다.</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="ico-text md-ver c-gray dot-gray">장소</span>
+                      <span>지하 1층 동그라미 홀</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <span class="circle-badge">
+                  <span class="tit">20-22</span>
+                  <span>2025.09</span>
+                </span>
+                <div class="desc-wrap">
+                  <div class="desc">
+                    <p>2025 서울갤러리 특별 전시회</p>
+                    <p class="sub">2025 서울갤러리 특별 전시회는 현대 미술의 다양한 흐름을 소개하는 자리입니다. 이 전시회에서는 국내외 유명 아티스트들의 작품을 감상할 수 있으며, 관람객들은 예술과 소통할 수 있는 다양한 프로그램에 참여할 수 있습니다. 특별한 경험을 제공하는 이번 전시회에 많은 관심과 참여 부탁드립니다.</p>
+                  </div>
+                  <ul>
+                    <li>
+                      <span class="ico-text md-ver c-gray dot-gray">장소</span>
+                      <span>지하 1층 동그라미 홀</span>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-right">
+      <h2>
+        <img src="../../resources/images/logo/footer_logo.svg" alt="서울갤러리 로고">
+      </h2>
+      <div class="footer-info">
+        <ul>
+          <li><a href="#" class="line-badge sm-ver c-white">개인정보처리방침</a></li>
+          <li><a href="#" class="line-badge sm-ver c-white">영상정보처리기기 운영 관리방침</a></li>
+        </ul>
+        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br>© 2025 SEOUL GALLERY. All Rights Reserved</p>
+        <a href="#" class="btn bg-black-transparent sm-ver insert-ico">서울갤러리 문의하기<span class="arrow-right ico"></span></a>
+      </div>
+    </div>
+    <div class="footer-left">
+      <div class="news-letter-box">
+        <span class="tit">NEWSLETTER</span>
+        <span class="desc">서울갤러리의 소식과 이야기를 뉴스레터로 받아보세요</span>
+        <div class="news-letter-input-wrap">
+          <div>
+            <label>
+              <input type="text" placeholder="E-MAIL">
+            </label>
+            <button type="button" class="ico-btn bg-black link circle"><span class="visually-hidden">이메일 전송하기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+/* ------------------------------------------------------------- */
+/* [상단 스크립트 목록 정리]
+* 1. 스케줄 캘린더 (라이브러리 명: Tui Calendar)
+*   1-1. 일정 (예시)
+*   1-2. 실행문
+*  */
+/* ------------------------------------------------------------- */
+
+/* 1. 스케줄 캘린더 (라이브러리 명: Tui Calendar) */
+/* 1-1. 일정 (예시) */
+const schedules = [
+  {
+    id: '2025-10-01',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-01T00:00:00", // 시간 포함
+    end: "2025-10-01T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  },
+  {
+    id: '2025-10-01',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-01T00:00:00", // 시간 포함
+    end: "2025-10-01T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  },
+  {
+    id: '2025-10-01',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-01T00:00:00", // 시간 포함
+    end: "2025-10-01T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  },
+  {
+    id: '2025-10-01',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-01T00:00:00", // 시간 포함
+    end: "2025-10-01T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  },
+  {
+    id: '2025-10-31',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-31T00:00:00", // 시간 포함
+    end: "2025-10-31T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  },
+  {
+    id: '2025-10-31',
+    calendarId: '1',
+    category: 'allday',
+    start: "2025-10-31T00:00:00", // 시간 포함
+    end: "2025-10-31T00:00:00",   // 하루 끝까지
+    bgColor: '#111', // 색상 순환 적용
+    color: '#000' // 글자 색상
+  }
+];
+/* 1-2. 실행문 */
+document.addEventListener("DOMContentLoaded", function () {
+    const Calendar = window.tui.Calendar;
+    const container = document.getElementById('calendar');
+
+    // 날짜별 일정 개수 계산
+    const dateEventCounts = {};
+    schedules.forEach(event => {
+      const dateKey = event.start.split('T')[0]; // 'YYYY-MM-DD'
+      dateEventCounts[dateKey] = (dateEventCounts[dateKey] || 0) + 1;
+    });
+
+    const calendar = new Calendar(container, {
+      defaultView: 'month',
+      isReadOnly: true,
+      usageStatistics: false,
+      language: 'ko',
+      taskView: true,
+      visibleWeeksCount: 0,
+      timezone: {
+        zones: [{ timezoneName: 'Asia/Seoul' }]
+      },
+      month: {
+        isAlways6Week: false,
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+      },
+      template: {
+        monthGridHeader: function(model) {
+          let dateObj;
+          if (model.date.toDate) {
+            dateObj = model.date.toDate();
+          } else if (model.date._date) {
+            dateObj = model.date._date;
+          } else {
+            dateObj = new Date(model.date);
+          }
+
+          const dateStr = `${dateObj.getFullYear()}-${String(dateObj.getMonth() + 1).padStart(2,'0')}-${String(dateObj.getDate()).padStart(2,'0')}`;
+          const count = dateEventCounts[dateStr] || 0;
+
+          const today = new Date();
+          const isToday =
+            today.getFullYear() === dateObj.getFullYear() &&
+            today.getMonth() === dateObj.getMonth() &&
+            today.getDate() === dateObj.getDate();
+
+          const dateClass = isToday ? 'calendar-date current-date' : 'calendar-date';
+
+          // data-date 추가 (YYYY-MM-DD)
+          // 접근성이 개선된 버튼 요소로 변경
+          return `<button type="button" class="${dateClass}" data-date="${dateStr}"
+                    role="gridcell"
+                    tabindex="0"
+                    aria-selected="false"
+                    aria-label="${dateObj.getFullYear()}년 ${dateObj.getMonth() + 1}월 ${dateObj.getDate()}일${count > 0 ? ` (일정 ${count}개)` : ''}">${
+            dateObj.getDate()
+          }${count > 0 ? `<span class="event-count" aria-hidden="true">${count}</span>` : ''}</button>`;
+        }
+      },
+    });
+
+    setTimeout(() => {
+      calendar.render();
+      updateHeader();
+
+      const today = new Date();
+      const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+      let selectedDateStr = todayStr;
+
+      initDayCellClick();
+      initKeyboardNavigation(); // 키보드 탐색 초기화
+      updateSelectedCell();
+
+      // 키보드 탐색 초기화
+      function initKeyboardNavigation() {
+        const dateCells = container.querySelectorAll('.toastui-calendar-daygrid-cell button');
+
+        dateCells.forEach((cell, index) => {
+          cell.addEventListener('keydown', function(e) {
+            let nextIndex;
+
+            switch(e.key) {
+              case 'ArrowRight':
+                nextIndex = index + 1;
+                if (nextIndex < dateCells.length) dateCells[nextIndex].focus();
+                e.preventDefault();
+                break;
+              case 'ArrowLeft':
+                nextIndex = index - 1;
+                if (nextIndex >= 0) dateCells[nextIndex].focus();
+                e.preventDefault();
+                break;
+              case 'ArrowUp':
+                nextIndex = index - 7;
+                if (nextIndex >= 0) dateCells[nextIndex].focus();
+                e.preventDefault();
+                break;
+              case 'ArrowDown':
+                nextIndex = index + 7;
+                if (nextIndex < dateCells.length) dateCells[nextIndex].focus();
+                e.preventDefault();
+                break;
+              case 'Enter':
+              case ' ':
+                this.click();
+                e.preventDefault();
+                break;
+            }
+          });
+        });
+      }
+
+      // 오늘 날짜 강조
+      function highlightCurrentDate() {
+        const today = new Date();
+        const viewDate = calendar.getDate();
+
+        // 모든 날짜 셀 가져오기
+        const dateCells = container.querySelectorAll('.toastui-calendar-daygrid-cell');
+
+        // 이전 강조 표시 제거
+        dateCells.forEach(cell => {
+          cell.classList.remove('current-date');
+        });
+
+        // 현재 보이는 달력의 첫 날과 마지막 날 구하기
+        const firstDate = new Date(viewDate.getFullYear(), viewDate.getMonth(), 1);
+        const lastDate = new Date(viewDate.getFullYear(), viewDate.getMonth() + 1, 0);
+        // 날짜 비교를 위해 시간을 제거한 새로운 Date 객체 생성
+        const todayWithoutTime = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+        const firstDateWithoutTime = new Date(firstDate.getFullYear(), firstDate.getMonth(), firstDate.getDate());
+        const lastDateWithoutTime = new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate());
+
+        // 오늘 날짜가 현재 보이는 달력 범위 안에 있는지 확인
+        if (todayWithoutTime >= firstDateWithoutTime && todayWithoutTime <= lastDateWithoutTime) {
+          const currentDay = today.getDate();
+          const firstDayOfMonth = firstDate.getDay(); // 이번 달 1일의 요일 (0-6)
+          const targetCellIndex = firstDayOfMonth + currentDay - 1;
+          if (dateCells[targetCellIndex]) {
+            const cell = dateCells[targetCellIndex];
+            cell.classList.add('current-date');
+          }
+        }
+      }
+      function updateHeader() {
+        const currentMonthEl = document.getElementById('currentMonth');
+        if (!currentMonthEl) return;
+
+        const viewDate = calendar.getDate();
+        const year = viewDate.getFullYear();
+        const month = viewDate.getMonth() + 1;
+        currentMonthEl.textContent = `${year}년 ${month}월`;
+
+        // 오늘 강조 갱신
+        highlightCurrentDate();
+      }
+
+      // 모든 날짜 셀 클릭 이벤트
+      function initDayCellClick() {
+        const dayCells = container.querySelectorAll('.toastui-calendar-daygrid-cell');
+
+        dayCells.forEach(cell => {
+          cell.addEventListener('click', function () {
+            const dateEl = this.querySelector('.calendar-date');
+            if (!dateEl) return;
+
+            const dateStr = dateEl.dataset.date;
+            if (!dateStr) return;
+
+            const clickedDate = new Date(dateStr);
+            const viewDate = calendar.getDate();
+            const currentMonth = viewDate.getMonth();
+
+            // 현재 월이 아니면 클릭 금지
+            if (clickedDate.getMonth() !== currentMonth) return;
+
+            // 선택 날짜 저장
+            selectedDateStr = dateStr;
+
+            // 시각적 selected 적용
+            updateSelectedCell();
+
+            // 스크린리더 안내
+            announceToScreenReader(
+              `${clickedDate.getFullYear()}년 ${clickedDate.getMonth() + 1}월 ${clickedDate.getDate()}일이 선택되었습니다.`
+            );
+          });
+        });
+      }
+
+      // 선택 상태 업데이트 함수
+      function updateSelectedCell() {
+        const dayCells = container.querySelectorAll('.toastui-calendar-daygrid-cell');
+
+        dayCells.forEach(cell => {
+          const dateEl = cell.querySelector('.calendar-date');
+          if (!dateEl) return;
+
+          const dateStr = dateEl.dataset.date;
+
+          if (dateStr === selectedDateStr) {
+            cell.classList.add('selected');
+          } else {
+            cell.classList.remove('selected');
+          }
+        });
+      }
+
+
+
+      // 스크린리더 알림
+      function announceToScreenReader(message) {
+        let announcer = document.getElementById('calendar-announcer');
+        if (!announcer) {
+          announcer = document.createElement('div');
+          announcer.id = 'calendar-announcer';
+          announcer.setAttribute('aria-live', 'polite');
+          announcer.setAttribute('class', 'visually-hidden');
+          container.appendChild(announcer);
+        }
+        announcer.textContent = message;
+      }
+
+      // 이전/다음 달 버튼 접근성 개선
+      const prevButton = document.getElementById('prevMonth');
+      const nextButton = document.getElementById('nextMonth');
+
+      prevButton.setAttribute('aria-label', '이전 달로 이동');
+      nextButton.setAttribute('aria-label', '다음 달로 이동');
+
+      // 기존 이벤트 리스너 유지
+      prevButton.addEventListener('click', () => {
+        calendar.prev();
+        updateHeader();
+        setTimeout(() => {
+          updateSelectedCell();
+          initKeyboardNavigation();
+        }, 0);
+      });
+
+      nextButton.addEventListener('click', () => {
+        calendar.next();
+        updateHeader();
+        setTimeout(() => {
+          updateSelectedCell();
+          initKeyboardNavigation();
+        }, 0);
+      });
+
+    }, 0);
+  });
+</script>
+</body>
+</html>

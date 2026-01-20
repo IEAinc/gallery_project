@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang=ko>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- css -->
+  <link rel="stylesheet" href="../../resources/css/main.css">
+  <link rel="stylesheet" href="../../resources/lib/swiper/swiper.css">
+
+  <!-- lib -->
+  <script src="../../resources/lib/jquery-1.11.3.min.js"></script>
+  <script src="../../resources/lib/swiper/swiper.js"></script>
+
+  <!-- tui calenadar -->
+  <link rel="stylesheet" href="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.css">
+  <script src="https://uicdn.toast.com/calendar/v2.1.3/toastui-calendar.min.js"></script>
+
+  <!-- gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <!-- js -->
+  <script src="../../resources/js/main.js"></script>
+
+  <title>공간안내</title>
+</head>
+<body class="en">
+<!-- [웹 접근성] : 본문 바로가기 -->
+<a href="#main" id="skip-nav">Skip to main content</a>
+<!-- 헤더 -->
+<header>
+  <!-- [사이드바] dim 처리 영역 -->
+  <div id="dim-overlay" class="dim" onclick="closeSideBar();"></div>
+  <div class="inner-wrap">
+    <!-- 로고 -->
+    <h1>
+      <a href="#">
+        <img src="../../resources/images/logo/logo_pc.svg" alt="logo">
+      </a>
+    </h1>
+    <!-- gnb -->
+    <nav>
+      <!-- pc -->
+      <ul class="pc-nav pc-flex-only">
+        <li>
+          <button type="button">Seoul Gallery</button>
+          <ul>
+            <li><a href="#">About the Gallery</a></li>
+            <li><a href="#">Facility Information</a></li>
+            <li><a href="#">Space Guide</a></li>
+            <li><a href="#">How to find us</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">Future Seoul Urban Hall</button>
+          <ul>
+            <li><a href="#">Future Seoul Hall</a></li>
+            <li><a href="#">Global Urban Hall</a></li>
+          </ul>
+        </li>
+        <li>
+          <button type="button">Venue Rental</button>
+          <ul>
+            <li><a href="#">Rental Information</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">Programs</button>
+          <ul>
+            <li><a href="#">Seoul Gallery Schedule</a></li>
+            <li><a href="#">Program Information</a></li>
+          </ul>
+        </li>
+        <li class="long">
+          <button type="button">News & Notices</button>
+          <ul>
+            <li><a href="#">Notice</a></li>
+            <li><a href="#">Press Releases</a></li>
+            <li><a href="#">Media Gallery</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <!-- mobile -->
+      <div class="sidebar tablet-mo-only">
+        <div class="sidebar-top">
+          <!-- 언어 설정 -->
+          <div class="tab-wrap">
+            <button type="button" class="active">KR</button>
+            <button type="button">EN</button>
+          </div>
+          <!-- 닫기 버튼 -->
+          <button type="button" class="ico-btn circle bg-black ico-close" onclick="closeSideBar()"><span class="visually-hidden">Close</span></button>
+        </div>
+        <ul class="accordion-nav-list">
+          <li class="active">
+            <button type="button" class="active">Seoul Gallery</button>
+            <ul>
+              <li class="active"><a href="#">About the Gallery</a></li>
+              <li><a href="#">Facility Information</a></li>
+              <li><a href="#">Space Guide</a></li>
+              <li><a href="#">How to find us</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">Future Seoul Urban Hall</button>
+            <ul>
+              <li><a href="#">Future Seoul Hall</a></li>
+              <li><a href="#">Global Urban Hall</a></li>
+            </ul>
+          </li>
+          <li>
+            <button type="button">Venue Rental</button>
+            <ul>
+              <li><a href="#">Rental Information</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">Programs</button>
+            <ul>
+              <li><a href="#">Seoul Gallery Schedule</a></li>
+              <li><a href="#">Program Information</a></li>
+            </ul>
+          </li>
+          <li class="long">
+            <button type="button">News & Notices</button>
+            <ul>
+              <li><a href="#">Notice</a></li>
+              <li><a href="#">Press Releases</a></li>
+              <li><a href="#">Media Gallery</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="custom-select pc-flex-only" data-select="small-round" data-options="1">
+      <button type="button" class="select-toggle" aria-haspopup="listbox" aria-expanded="false">
+        <span class="selected-text"></span>
+      </button>
+      <ul class="select-list" role="listbox" aria-hidden="true"></ul>
+    </div>
+
+    <!-- hamburger (mobile) -->
+    <button type="button" class="ico-btn ico-hamburger tablet-mo-flex-only" onclick="openSideBar()"><span class="visually-hidden">메뉴 열기</span></button>
+  </div>
+</header>
+
+<!-- 메인 -->
+<main id="main" class="sub-page">
+  <!-- 서브 타이틀 -->
+  <div class="sub-title-wrap">
+    <img src="../../resources/images/main-page/sub-bg-mo.png" alt="" class="mo-only">
+    <div class="sub-title">
+      <span class="symbol">Seoul Gallery</span>
+      <h2>Space Guide</h2>
+    </div>
+  </div>
+
+  <!-- 서브 페이지 컨텐츠 -->
+  <div class="sub-inner-wrap whole-ver">
+    <!-- 탭 버튼 -->
+    <section class="sec-space-top">
+      <div class="inner-wrap">
+        <div class="top-sub-wrap">
+          <div class="tab-wrap ver2" role="tablist" aria-label="탭 메뉴">
+            <button id="tab1" type="button" role="tab" aria-controls="panel1" aria-selected="true" tabindex="0" class="active">B1</button>
+            <button id="tab2" type="button" role="tab" aria-controls="panel2" aria-selected="false" tabindex="0">B2</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 탭 모음 -->
+    <div class="tab" id="panel1" role="tabpanel" aria-labelledby="tab1">
+      <!-- 이미지 위치 -->
+      <section class="sec-facility-space">
+        <div class="inner-wrap">
+          <div class="fc-title-wrap">
+            <h4>B1</h4>
+            <span>Seoul’s representative space where the city’s vision and values are shared with its citizens</span>
+          </div>
+          <div class="fc-info-wrap"  data-facility="b1">
+            <!-- 1. 시설 이미지 -->
+            <div class="fc-img-wrap">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-1.png" alt="Future Seoul Hall" class="active" data-btn-select="b1-1">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-2.png"  alt="Global Urban Hall" data-btn-select="b1-2">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-3.png" alt="Youth Vitality Hub" data-btn-select="b1-3">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-4.png" alt="Performance Hall" data-btn-select="b1-4">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-5.png" alt="Cafe" data-btn-select="b1-5">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-6.png" alt="Seoul Bookstore" data-btn-select="b1-6">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-7.png" alt="Seoul My Soul Shop" data-btn-select="b1-7">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-8.png" alt="Gungisi Heritage Exhibition Hall" data-btn-select="b1-8">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-9.png" alt="Pop-up Exhibition Hall" data-btn-select="b1-9">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-10.png" alt="Nursing Room" data-btn-select="b1-10">
+              <img src="../../resources/images/sub-page/seoul-gallery/b1-11.png" alt="Information" data-btn-select="b1-11">
+            </div>
+            <!-- 2. 시설 선택 버튼 -->
+            <div class="fc-btn-wrap column-ver">
+              <div class="fc-btn-box">
+                <button type="button" class="fc-btn active ico-btn1" data-btn-select="b1-1">Future Seoul Hall</button>
+                <button type="button" class="fc-btn ico-btn2" data-btn-select="b1-2">Global Urban Hall</button>
+                <button type="button" class="fc-btn ico-btn3" data-btn-select="b1-3">Youth Vitality Hub</button>
+                <button type="button" class="fc-btn ico-btn4" data-btn-select="b1-4">Performance Hall</button>
+                <button type="button" class="fc-btn ico-btn5" data-btn-select="b1-5">Cafe</button>
+                <button type="button" class="fc-btn ico-btn6" data-btn-select="b1-6">Seoul Bookstore</button>
+              </div>
+              <div class="fc-btn-box">
+                <button type="button" class="fc-btn ico-btn7" data-btn-select="b1-7">Seoul My Soul Shop</button>
+                <button type="button" class="fc-btn ico-btn8" data-btn-select="b1-8">Gungisi Heritage Exhibition Hall</button>
+                <button type="button" class="fc-btn ico-btn9" data-btn-select="b1-9">Pop-up Exhibition Hall</button>
+                <button type="button" class="fc-btn ico-btn10" data-btn-select="b1-10">Nursing Room</button>
+                <button type="button" class="fc-btn ico-btn11" data-btn-select="b1-11">Information</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 이미지(스크롤) -->
+      <section class="sec-space-history" data-scroll-event="event1">
+        <div class="inner-wrap">
+          <div class="image-scroll-wrap">
+            <div class="scroll-gallery">
+              <div class="left">
+                <div class="history-controls">
+                  <div class="history-scroll">
+                    <span class="bar"></span>
+                  </div>
+                  <button class="ico-btn circle bg-white ico-up"><span class="visually-hidden">위</span></button>
+                  <button class="ico-btn circle bg-white ico-up rotate"><span class="visually-hidden">아래</span></button>
+                </div>
+                <div class="gallery-inner">
+                  <div class="history-list">
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Youth Vitality Hub</span>
+                      <span>텍스트 수급</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Gungisi Heritage Exhibition Hall</span>
+                      <span>A space where visitors can explore and experience the remains of the Gungisi building site and artifacts such as the bullanggi (bronze cannon) unearthed during the construction of the new Seoul City Hall.</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Seoul Bookstore</span>
+                      <span>A specialized bookstore that exhibits and sells publications and materials issued by the Seoul Metropolitan Government.</span>
+                    </button>
+                    <div class="history-item active">
+                      <p>Seoul My Seoul Shop</p>
+                      <span>The official Seoul sales gallery that exhibits and sells Seoul-branded merchandise and Haechi merchandise.
+                    </span>
+                    </div>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Performance Hall</span>
+                      <span>A space where visitors can enjoy small-scale performances and events across a variety of genres.</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Pop-up Exhibition Hall</span>
+                      <span>A flexible exhibition space where Seoul’s policies and cultural contents are freely displayed and promoted by theme.</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Cafe</span>
+                      <span>A space where a robot barista serves beverages in reusable cups, offering visitors a comfortable environment to enjoy performances and relax.</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Information</span>
+                      <span>A comprehensive information center that provides details on nearby facilities and tourist attractions around Seoul Gallery, offering assistance in English as well.</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Nursing Room</span>
+                      <span>A dedicated space designed to provide comfort for visitors accompanied by infants and young children, where they can care for and nurse their babies in a private and relaxing environment.</span>
+                    </button>
+                  </div>
+                </div>
+                <!-- 애니메이션 뱃지 -->
+                <span class="rotate-symbol"><img src="../../resources/images/main-page/rotate.svg" alt=""></span>
+              </div>
+              <div class="right">
+                <div class="history-images">
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="tab single" id="panel2" role="tabpanel" aria-labelledby="tab2" hidden>
+      <!-- 이미지 위치 -->
+      <section class="sec-facility-space">
+        <div class="inner-wrap">
+          <div class="fc-title-wrap">
+            <h4>B2</h4>
+            <span class="long">
+            Transformed into a versatile venue, it now offers a variety of meeting rooms<br class="pc-tablet-only">
+            designed for citizen participation,<br class="mo-only">
+            educational events, and municipal conferences.
+          </span>
+          </div>
+          <div class="fc-info-wrap mb-sm">
+            <!-- 1. 시설 이미지 -->
+            <div class="fc-img-wrap">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-1.png" alt="Taepyeong Hall" class="active" data-btn-select="b2-1">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-2.png" alt="Donggeurami Room" data-btn-select="b2-3">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-3.png" alt="Workshop Room" data-btn-select="b2-2">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-4.png" alt="Citizen Lounge" data-btn-select="b2-4">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-5.png" alt="MeetingRoom1" data-btn-select="b2-5">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-6.png" alt="MeetingRoom2" data-btn-select="b2-6">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-7.png" alt="MeetingRoom3" data-btn-select="b2-7">
+              <img src="../../resources/images/sub-page/seoul-gallery/b2-8.png" alt="MeetingRoom4" data-btn-select="b2-8">
+            </div>
+            <!-- 2. 시설 선택 버튼 -->
+            <div class="fc-btn-wrap column-ver">
+              <div class="fc-btn-box">
+                <button type="button" class="fc-btn active ico-btn1" data-btn-select="b2-1">Taepyeong Hall</button>
+                <button type="button" class="fc-btn ico-btn2" data-btn-select="b2-2">Donggeurami Room</button>
+                <button type="button" class="fc-btn ico-btn3" data-btn-select="b2-3">Workshop Room</button>
+                <button type="button" class="fc-btn ico-btn4" data-btn-select="b2-4">Citizen Lounge</button>
+              </div>
+              <div class="fc-btn-box">
+                <button type="button" class="fc-btn ico-btn5" data-btn-select="b2-5">Meeting Room1</button>
+                <button type="button" class="fc-btn ico-btn6" data-btn-select="b2-6">Meeting Room2</button>
+                <button type="button" class="fc-btn ico-btn7" data-btn-select="b2-7">Meeting Room3</button>
+                <button type="button" class="fc-btn ico-btn8" data-btn-select="b2-8">Meeting Room4</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- 이미지(스크롤) -->
+      <section class="sec-space-history" data-scroll-event="event2">
+        <div class="inner-wrap">
+          <div class="image-scroll-wrap">
+            <div class="scroll-gallery">
+              <div class="left">
+                <div class="history-controls">
+                  <div class="history-scroll">
+                    <span class="bar"></span>
+                  </div>
+                  <button class="ico-btn circle bg-white ico-up"><span class="visually-hidden">prev</span></button>
+                  <button class="ico-btn circle bg-white ico-up rotate"><span class="visually-hidden">next</span></button>
+                </div>
+                <div class="gallery-inner">
+                  <div class="history-list">
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Taepyeong Hall</span>
+                      <span>Urban Architecture Committee / Meeting Room</span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Workshop Room</span>
+                      <span>
+                        A multipurpose space available for rental, suitable for seminars, educational programs, and various gatherings or workshops. Covering an area of 105.8㎡, it can accommodate up to 60 people.
+                      </span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Donggeurami Room</span>
+                      <span>
+                      A multipurpose space available for rental, suitable for seminars, educational programs, and various meetings or workshops. Covering an area of 73.2㎡, it can accommodate up to 30 people.
+                      </span>
+                    </button>
+                    <button type="button" class="history-item">
+                      <span class="h-tit">Meeting Room</span>
+                      <span>
+                        Four independent meeting rooms available for small to mid-sized gatherings.
+                        Citizen Lounge
+                      </span>
+                    </button>
+                    <div class="history-item active">
+                      <span class="h-tit">Citizen Lounge</span>
+                      <span>
+                       An open lounge space where citizens can gather, converse, and relax freely without the need for prior reservation.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="right">
+                <div class="history-images">
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                  <div class="image-item active"><img src="../../resources/images/sub-page/seoul-gallery/space-bottom-img1.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</main>
+
+<!-- 푸터 -->
+<footer>
+  <div class="inner-wrap">
+    <div class="footer-right">
+      <h2>
+        <img src="../../resources/images/logo/footer_logo.svg" alt="서울갤러리 로고">
+      </h2>
+      <div class="footer-info">
+        <ul>
+          <li><a href="#" class="line-badge sm-ver c-white">개인정보처리방침</a></li>
+          <li><a href="#" class="line-badge sm-ver c-white">영상정보처리기기 운영 관리방침</a></li>
+        </ul>
+        <p>서울특별시 중구 세종대로 110 서울특별시청 지하1, 2, 4층<br>© 2025 SEOUL GALLERY. All Rights Reserved</p>
+        <a href="#" class="btn bg-black-transparent sm-ver insert-ico">서울갤러리 문의하기<span class="arrow-right ico"></span></a>
+      </div>
+    </div>
+    <div class="footer-left">
+      <div class="news-letter-box">
+        <span class="tit">NEWSLETTER</span>
+        <span class="desc">서울갤러리의 소식과 이야기를 뉴스레터로 받아보세요</span>
+        <div class="news-letter-input-wrap">
+          <div>
+            <label>
+              <input type="text" placeholder="E-MAIL">
+            </label>
+            <button type="button" class="ico-btn bg-black link circle"><span class="visually-hidden">이메일 전송하기</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+/* ------------------------------------------------------------- */
+/* [상단 스크립트 목록 정리]
+* 1. 공간 안내 탭 - 인터렉션 관력 기능 (main.js)
+*   1-1. 이미지 스크롤 이벤트
+*   1-2. 이미지 위치
+*  */
+/* ------------------------------------------------------------- */
+
+/* 1. 공간 안내 탭 - 인터렉션 관력 기능 (main.js) */
+document.addEventListener("DOMContentLoaded", () => {
+  window.addEventListener("resize", () => handleResize('event1'));
+  // 탭 요소들 선택
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+  // 요소가 존재하는지 먼저 확인
+  if (tabs.length === 0 || panels.length === 0) {
+    console.warn('탭 또는 패널 요소를 찾을 수 없습니다.');
+    return; // 요소가 없으면 함수 실행 중단
+  }
+
+  // 탭 클릭 이벤트
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => activateTab(tab));
+  });
+
+  // 키보드 이동
+  tabs.forEach((tab, index) => {
+    tab.addEventListener("keydown", e => {
+      let newIndex = null;
+      if (e.key === "ArrowRight") newIndex = (index + 1) % tabs.length;
+      else if (e.key === "ArrowLeft") newIndex = (index - 1 + tabs.length) % tabs.length;
+      else return;
+
+      e.preventDefault();
+      tabs[newIndex].focus();
+      activateTab(tabs[newIndex]);
+    });
+  });
+  function activateTab(selectedTab) {
+    tabs.forEach(tab => {
+      tab.setAttribute("aria-selected", "false");
+      tab.classList.remove("active");
+    });
+
+    panels.forEach(panel => (panel.hidden = true));
+
+    selectedTab.setAttribute("aria-selected", "true");
+    selectedTab.tabIndex = 0;
+    selectedTab.classList.add("active");
+
+    const targetId = selectedTab.getAttribute("aria-controls");
+    if (targetId) {
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.hidden = false;
+    }
+
+    // event1 관련 탭일 때만 이미지 확대 이벤트 활성화
+    console.log(selectedTab.id)
+    if (selectedTab.id === "tab1") {
+      // 기존 이벤트 제거 (tab2용)
+      destroySpaceHistory("event2");
+      // event1 실행
+      setTimeout(function() {
+        initSpaceHistory("event1");
+      },50);
+
+
+    } else if (selectedTab.id === "tab2") {
+      // event1 관련된 건 전부 해제
+      destroySpaceHistory("event1");
+
+      // event1 실행
+      setTimeout(function() {
+        initSpaceHistory("event2");
+      },50);
+    }
+
+  }
+  // 초기 탭 활성화
+  const initialTab = tabs.find(tab => tab.getAttribute('aria-selected') === 'true') || tabs[0];
+  if (initialTab) activateTab(initialTab);
+
+  /* 2. 시설안내 주요기능 */
+  document.querySelectorAll(".fc-info-wrap").forEach(facilityWrap => {
+    const images = facilityWrap.querySelectorAll(".fc-img-wrap img");
+    const buttons = facilityWrap.querySelectorAll(".fc-btn-wrap .fc-btn");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const target = btn.dataset.btnSelect;
+
+        // 이미지 + 버튼 active 제거
+        images.forEach(img => img.classList.remove("active"));
+        buttons.forEach(b => b.classList.remove("active"));
+
+        // 클릭한 버튼 + 이미지 활성화
+        btn.classList.add("active");
+        const targetImg = facilityWrap.querySelector(`.fc-img-wrap img[data-btn-select="${target}"]`);
+        if (targetImg) targetImg.classList.add("active");
+      });
+    });
+  });
+});
+</script>
+</body>
+</html>
